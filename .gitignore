@@ -3,3 +3,9 @@ data_raw/
 __pycache__/
 *.pyc
 .DS_Store
+.venv/
+research/kg/.venv/
+research/kg/artifacts/
+research/kg/figures/
+genomex-final/
+logs/
