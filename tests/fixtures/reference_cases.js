@@ -91,4 +91,24 @@ export const CASES = [
   { id: 'esc-2c19-pm', source: 'DPWG escitalopram/CYP2C19 (ClinPGx PA166104975)', drug: 'escitalopram', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
   { id: 'sert-2c19-um', source: 'CPIC sertraline (ClinPGx PA166127639)', drug: 'sertraline', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
   { id: 'sert-2c19-pm', source: 'DPWG sertraline/CYP2C19 (ClinPGx PA166104980) + CPIC (PA166127639)', drug: 'sertraline', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
+  // --- Tacrolimus / CYP3A5
+  { id: 'tacro-3a5-nm', source: 'CPIC tacrolimus (ClinPGx PA166124619) + DPWG (PA166104983)', drug: 'tacrolimus', patient: P({}, { 'CYP3A5': 'normal' }), expected: 'modify' },
+  { id: 'tacro-3a5-im', source: 'CPIC tacrolimus (ClinPGx PA166124619) + DPWG (PA166104983)', drug: 'tacrolimus', patient: P({}, { 'CYP3A5': 'intermediate' }), expected: 'modify' },
+  { id: 'tacro-3a5-pm', source: 'CPIC tacrolimus (ClinPGx PA166124619): non-expressors use standard dose', drug: 'tacrolimus', patient: P({}, { 'CYP3A5': 'poor' }), expected: 'no_flag' },
+  // --- Warfarin
+  { id: 'warf-2c9-pm', source: 'DPWG warfarin/CYP2C9 (ClinPGx PA166182842) + CPIC (PA166104949)', drug: 'warfarin', patient: P({}, { 'CYP2C9': 'poor' }), expected: 'modify' },
+  { id: 'warf-2c9-im', source: 'DPWG warfarin/CYP2C9 (ClinPGx PA166182842)', drug: 'warfarin', patient: P({}, { 'CYP2C9': 'intermediate' }), expected: 'modify' },
+  { id: 'warf-vkorc1-v', source: 'DPWG warfarin/VKORC1 (ClinPGx PA166182841) + CPIC (PA166104949)', drug: 'warfarin', patient: P({}, { 'VKORC1': 'variant_present' }), expected: 'modify' },
+  { id: 'warf-cyp4f2-v', source: 'CPIC warfarin (ClinPGx PA166104949): CYP4F2 variant affects dosing algorithm', drug: 'warfarin', patient: P({}, { 'CYP4F2': 'variant_present' }), expected: 'modify' },
+  // --- Tamoxifen
+  { id: 'tam-2d6-pm', source: 'CPIC tamoxifen (ClinPGx PA166176068) + DPWG (PA166104966)', drug: 'tamoxifen', patient: P({}, { 'CYP2D6': 'poor' }), expected: 'modify' },
+  { id: 'tam-2d6-im', source: 'DPWG tamoxifen/CYP2D6 (ClinPGx PA166104966)', drug: 'tamoxifen', patient: P({}, { 'CYP2D6': 'intermediate' }), expected: 'modify' },
+  // --- PPIs
+  { id: 'ome-2c19-um', source: 'CPIC PPI 2021 (ClinPGx PA166219103) + DPWG (PA166104957)', drug: 'omeprazole', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
+  { id: 'lans-2c19-um', source: 'CPIC PPI 2021 (ClinPGx PA166219103) + DPWG (PA166104987)', drug: 'lansoprazole', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
+  // --- Voriconazole
+  { id: 'vori-2c19-um', source: 'CPIC voriconazole (ClinPGx PA166161537) + DPWG (PA166104990) + AusNZ (PA166257241)', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
+  { id: 'vori-2c19-pm', source: 'DPWG voriconazole/CYP2C19 (ClinPGx PA166104990)', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
+  // --- Irinotecan
+  { id: 'iri-ugt1a1-pm', source: 'DPWG irinotecan/UGT1A1 (ClinPGx PA166104951)', drug: 'irinotecan', patient: P({}, { 'UGT1A1': 'poor' }), expected: 'modify' },
 ];

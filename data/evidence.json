@@ -140,6 +140,56 @@
    "type": "primary_guideline",
    "retrieved": "2026-10-13",
    "note": "CPIC 2023 SSRI guideline; covers citalopram, escitalopram, sertraline and others."
+  },
+  {
+   "id": "E-CPIC-TACROLIMUS-2015",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines for CYP3A5 Genotype and Tacrolimus Dosing",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481158",
+   "year": "2015",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC tacrolimus/CYP3A5 guideline; covers dose increases for CYP3A5 expressors."
+  },
+  {
+   "id": "E-CPIC-WARFARIN-2017",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for Pharmacogenetics-Guided Warfarin Dosing: 2017 Update",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5546947",
+   "year": "2017",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC warfarin guideline; multi-gene dosing algorithm for CYP2C9, VKORC1, CYP4F2."
+  },
+  {
+   "id": "E-CPIC-TAMOXIFEN-2018",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for CYP2D6 and Tamoxifen Therapy",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5931215",
+   "year": "2018",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC tamoxifen/CYP2D6 guideline; alternative therapy for PM."
+  },
+  {
+   "id": "E-CPIC-PPI-2021",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for CYP2C19 and Proton Pump Inhibitor Dosing",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868475",
+   "year": "2021",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC PPI guideline; covers omeprazole, lansoprazole, pantoprazole and CYP2C19 UM dose adjustment."
+  },
+  {
+   "id": "E-CPIC-VORI-2017",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines for CYP2C19 Genotype and Voriconazole Therapy",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5474211",
+   "year": "2017",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC voriconazole/CYP2C19 guideline; alternative agent for UM, dose reduction for PM."
   }
  ]
 }
