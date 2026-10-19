@@ -1,0 +1,917 @@
+TAP version 13
+# Subtest: sources.json records provenance, hashes, licences and obligations for every ingested dataset
+ok 1 - sources.json records provenance, hashes, licences and obligations for every ingested dataset
+  ---
+  duration_ms: 5.680326
+  type: 'test'
+  ...
+# Subtest: guideline index carries the ClinPGx attribution and every URL is https
+ok 2 - guideline index carries the ClinPGx attribution and every URL is https
+  ---
+  duration_ms: 1.178818
+  type: 'test'
+  ...
+# Subtest: guideline index: 217 unique guidelines; sources are CPIC/DPWG/RNPGx/CPNDS etc.; every drug id resolves; dates are ISO
+ok 3 - guideline index: 217 unique guidelines; sources are CPIC/DPWG/RNPGx/CPNDS etc.; every drug id resolves; dates are ISO
+  ---
+  duration_ms: 3.212439
+  type: 'test'
+  ...
+# Subtest: catalog: guided drugs = those with a hand rule or a published guideline; scope "all" covers every drug
+ok 4 - catalog: guided drugs = those with a hand rule or a published guideline; scope "all" covers every drug
+  ---
+  duration_ms: 73.22798
+  type: 'test'
+  ...
+# Subtest: every original catalog drug id still exists with its class
+ok 5 - every original catalog drug id still exists with its class
+  ---
+  duration_ms: 0.621976
+  type: 'test'
+  ...
+# Subtest: every hand-encoded PGx rule is covered by >=1 published guideline for the SAME drug and the same gene
+ok 6 - every hand-encoded PGx rule is covered by >=1 published guideline for the SAME drug and the same gene
+  ---
+  duration_ms: 0.810096
+  type: 'test'
+  ...
+# Subtest: every cited G: guideline is for the rule's drug and names one of the rule's genes
+ok 7 - every cited G: guideline is for the rule's drug and names one of the rule's genes
+  ---
+  duration_ms: 2.188758
+  type: 'test'
+  ...
+# Subtest: every CPIC-sourced hand rule cites at least one CPIC guideline annotation; hand rules never contradict a "no recommendation" guideline
+ok 8 - every CPIC-sourced hand rule cites at least one CPIC guideline annotation; hand rules never contradict a "no recommendation" guideline
+  ---
+  duration_ms: 0.836896
+  type: 'test'
+  ...
+# Subtest: gene panel: every panel gene maps to a ClinPGx catalog symbol; CPIC-flag genes in rules are flagged in the gene table
+ok 9 - gene panel: every panel gene maps to a ClinPGx catalog symbol; CPIC-flag genes in rules are flagged in the gene table
+  ---
+  duration_ms: 1.159085
+  type: 'test'
+  ...
+# Subtest: alternatives are returned only for avoid/modify findings, with evidence; none invented
+ok 10 - alternatives are returned only for avoid/modify findings, with evidence; none invented
+  ---
+  duration_ms: 17.362389
+  type: 'test'
+  ...
+# Subtest: adverse index: per-drug files match the index counts, are sorted by rank, use known CUIs; sample of 40 drugs
+ok 11 - adverse index: per-drug files match the index counts, are sorted by rank, use known CUIs; sample of 40 drugs
+  ---
+  duration_ms: 30.036461
+  type: 'test'
+  ...
+# Subtest: adverse shards: the per-term inverted index agrees with the per-drug files (sample of 60 pairs)
+ok 12 - adverse shards: the per-term inverted index agrees with the per-drug files (sample of 60 pairs)
+  ---
+  duration_ms: 191.606829
+  type: 'test'
+  ...
+# Subtest: SIDER merge: duplicate drug names were merged (not double-counted) and the thyroxine mapping is flagged
+ok 13 - SIDER merge: duplicate drug names were merged (not double-counted) and the thyroxine mapping is flagged
+  ---
+  duration_ms: 0.546505
+  type: 'test'
+  ...
+# Subtest: history term matching: label-listed effects produce INFORMATIONAL findings only and never change the action category
+ok 14 - history term matching: label-listed effects produce INFORMATIONAL findings only and never change the action category
+  ---
+  duration_ms: 121.820283
+  type: 'test'
+  ...
+# Subtest: history term matching: unknown / malformed terms are rejected; terms whose shard is not loaded are flagged, not ignored
+ok 15 - history term matching: unknown / malformed terms are rejected; terms whose shard is not loaded are flagged, not ignored
+  ---
+  duration_ms: 94.57797
+  type: 'test'
+  ...
+# Subtest: frequency formatting states what is known and does not over-claim
+ok 16 - frequency formatting states what is known and does not over-claim
+  ---
+  duration_ms: 0.288523
+  type: 'test'
+  ...
+# Subtest: bucket function is stable and bounded
+ok 17 - bucket function is stable and bounded
+  ---
+  duration_ms: 0.180246
+  type: 'test'
+  ...
+# Subtest: dataset: schema validation passes with no errors
+ok 18 - dataset: schema validation passes with no errors
+  ---
+  duration_ms: 3.402396
+  type: 'test'
+  ...
+# Subtest: dataset: every rule resolves its evidence and every non-pending rule has evidence
+ok 19 - dataset: every rule resolves its evidence and every non-pending rule has evidence
+  ---
+  duration_ms: 0.365495
+  type: 'test'
+  ...
+# Subtest: dataset: no rule claims a CPIC evidence level (levels were not retrievable)
+ok 20 - dataset: no rule claims a CPIC evidence level (levels were not retrievable)
+  ---
+  duration_ms: 0.188693
+  type: 'test'
+  ...
+# Subtest: dataset: all evidence URLs are https
+ok 21 - dataset: all evidence URLs are https
+  ---
+  duration_ms: 0.265649
+  type: 'test'
+  ...
+# Subtest: dataset validator catches: duplicate rule id, unknown evidence, verified-without-evidence, bad phenotype, unknown drug, bad guideline id, unsupported alternative
+ok 22 - dataset validator catches: duplicate rule id, unknown evidence, verified-without-evidence, bad phenotype, unknown drug, bad guideline id, unsupported alternative
+  ---
+  duration_ms: 164.556745
+  type: 'test'
+  ...
+# Subtest: reference: abc-pos -> avoid  [CPIC abacavir/HLA-B 2014]
+ok 23 - reference: abc-pos -> avoid  [CPIC abacavir/HLA-B 2014]
+  ---
+  duration_ms: 14.331609
+  type: 'test'
+  ...
+# Subtest: reference: abc-neg -> no_flag  [CPIC abacavir/HLA-B 2014]
+ok 24 - reference: abc-neg -> no_flag  [CPIC abacavir/HLA-B 2014]
+  ---
+  duration_ms: 10.491887
+  type: 'test'
+  ...
+# Subtest: reference: allo-pos -> avoid  [CPIC allopurinol/HLA-B 2015]
+ok 25 - reference: allo-pos -> avoid  [CPIC allopurinol/HLA-B 2015]
+  ---
+  duration_ms: 9.064816
+  type: 'test'
+  ...
+# Subtest: reference: allo-neg -> no_flag  [CPIC allopurinol/HLA-B 2015]
+ok 26 - reference: allo-neg -> no_flag  [CPIC allopurinol/HLA-B 2015]
+  ---
+  duration_ms: 2.680567
+  type: 'test'
+  ...
+# Subtest: reference: cbz-pos-naive -> avoid  [CPIC CBZ/OXC 2017]
+ok 27 - reference: cbz-pos-naive -> avoid  [CPIC CBZ/OXC 2017]
+  ---
+  duration_ms: 6.305506
+  type: 'test'
+  ...
+# Subtest: reference: cbz-pos-prior -> conditional  [CPIC CBZ/OXC 2017 (recommendation addresses naive patients)]
+ok 28 - reference: cbz-pos-prior -> conditional  [CPIC CBZ/OXC 2017 (recommendation addresses naive patients)]
+  ---
+  duration_ms: 1.972489
+  type: 'test'
+  ...
+# Subtest: reference: cbz-pos-unk -> conditional  [CPIC CBZ/OXC 2017]
+ok 29 - reference: cbz-pos-unk -> conditional  [CPIC CBZ/OXC 2017]
+  ---
+  duration_ms: 12.928262
+  type: 'test'
+  ...
+# Subtest: reference: cbz-neg -> no_flag  [CPIC CBZ/OXC 2017]
+ok 30 - reference: cbz-neg -> no_flag  [CPIC CBZ/OXC 2017]
+  ---
+  duration_ms: 8.10427
+  type: 'test'
+  ...
+# Subtest: reference: cbz-b1502-neg-a3101-untested -> needs_info  [engine policy: missing data never normal]
+ok 31 - reference: cbz-b1502-neg-a3101-untested -> needs_info  [engine policy: missing data never normal]
+  ---
+  duration_ms: 8.816721
+  type: 'test'
+  ...
+# Subtest: reference: cbz-a3101-pos-naive -> modify  [CPIC CBZ/OXC 2017 + DPWG HLA-A*31:01]
+ok 32 - reference: cbz-a3101-pos-naive -> modify  [CPIC CBZ/OXC 2017 + DPWG HLA-A*31:01]
+  ---
+  duration_ms: 1.878531
+  type: 'test'
+  ...
+# Subtest: reference: oxc-pos-naive -> avoid  [CPIC CBZ/OXC 2017 (oxcarbazepine: avoid if naive)]
+ok 33 - reference: oxc-pos-naive -> avoid  [CPIC CBZ/OXC 2017 (oxcarbazepine: avoid if naive)]
+  ---
+  duration_ms: 12.944458
+  type: 'test'
+  ...
+# Subtest: reference: cod-um -> avoid  [CPIC opioids 2021]
+ok 34 - reference: cod-um -> avoid  [CPIC opioids 2021]
+  ---
+  duration_ms: 1.908672
+  type: 'test'
+  ...
+# Subtest: reference: cod-pm -> avoid  [CPIC opioids 2021]
+ok 35 - reference: cod-pm -> avoid  [CPIC opioids 2021]
+  ---
+  duration_ms: 6.168768
+  type: 'test'
+  ...
+# Subtest: reference: cod-nm-adult -> no_flag  [CPIC opioids 2021 (no PGx action for normal)]
+ok 36 - reference: cod-nm-adult -> no_flag  [CPIC opioids 2021 (no PGx action for normal)]
+  ---
+  duration_ms: 4.18684
+  type: 'test'
+  ...
+# Subtest: reference: cod-age-11 -> avoid  [FDA DSC 2017-04-20: contraindicated <12]
+ok 37 - reference: cod-age-11 -> avoid  [FDA DSC 2017-04-20: contraindicated <12]
+  ---
+  duration_ms: 12.474892
+  type: 'test'
+  ...
+# Subtest: reference: cod-age-12 -> conditional  [FDA DSC 2017-04-20: warning 12-18 w/ risk factors]
+ok 38 - reference: cod-age-12 -> conditional  [FDA DSC 2017-04-20: warning 12-18 w/ risk factors]
+  ---
+  duration_ms: 1.601319
+  type: 'test'
+  ...
+# Subtest: reference: cod-age-17 -> conditional  [FDA DSC 2017-04-20]
+ok 39 - reference: cod-age-17 -> conditional  [FDA DSC 2017-04-20]
+  ---
+  duration_ms: 8.067272
+  type: 'test'
+  ...
+# Subtest: reference: cod-age-18 -> no_flag  [FDA DSC 2017-04-20 (rule ends at 18)]
+ok 40 - reference: cod-age-18 -> no_flag  [FDA DSC 2017-04-20 (rule ends at 18)]
+  ---
+  duration_ms: 5.480364
+  type: 'test'
+  ...
+# Subtest: reference: cod-bf -> avoid  [FDA DSC 2017-04-20: recommends against in breastfeeding]
+ok 41 - reference: cod-bf -> avoid  [FDA DSC 2017-04-20: recommends against in breastfeeding]
+  ---
+  duration_ms: 1.356491
+  type: 'test'
+  ...
+# Subtest: reference: clo-im-acs -> modify  [CPIC clopidogrel 2022 (ACS/PCI)]
+ok 42 - reference: clo-im-acs -> modify  [CPIC clopidogrel 2022 (ACS/PCI)]
+  ---
+  duration_ms: 6.358188
+  type: 'test'
+  ...
+# Subtest: reference: clo-pm-acs -> modify  [CPIC clopidogrel 2022 (ACS/PCI)]
+ok 43 - reference: clo-pm-acs -> modify  [CPIC clopidogrel 2022 (ACS/PCI)]
+  ---
+  duration_ms: 2.915302
+  type: 'test'
+  ...
+# Subtest: reference: clo-pm-unk -> conditional  [CPIC clopidogrel 2022 (indication-dependent)]
+ok 44 - reference: clo-pm-unk -> conditional  [CPIC clopidogrel 2022 (indication-dependent)]
+  ---
+  duration_ms: 10.172369
+  type: 'test'
+  ...
+# Subtest: reference: clo-pm-other -> conditional  [CPIC clopidogrel 2022 (indication-dependent)]
+ok 45 - reference: clo-pm-other -> conditional  [CPIC clopidogrel 2022 (indication-dependent)]
+  ---
+  duration_ms: 1.832154
+  type: 'test'
+  ...
+# Subtest: reference: clo-pm-othercv -> modify  [CPIC clopidogrel 2022: cardiovascular indications (ClinPGx PA166104948)]
+ok 46 - reference: clo-pm-othercv -> modify  [CPIC clopidogrel 2022: cardiovascular indications (ClinPGx PA166104948)]
+  ---
+  duration_ms: 6.403237
+  type: 'test'
+  ...
+# Subtest: reference: clo-im-neuro -> modify  [CPIC clopidogrel 2022: neurovascular indications (ClinPGx PA166104948)]
+ok 47 - reference: clo-im-neuro -> modify  [CPIC clopidogrel 2022: neurovascular indications (ClinPGx PA166104948)]
+  ---
+  duration_ms: 6.108346
+  type: 'test'
+  ...
+# Subtest: reference: clo-nm -> no_flag  [CPIC clopidogrel 2022]
+ok 48 - reference: clo-nm -> no_flag  [CPIC clopidogrel 2022]
+  ---
+  duration_ms: 4.15129
+  type: 'test'
+  ...
+# Subtest: reference: aza-tpmt-pm -> modify  [CPIC thiopurines 2018]
+ok 49 - reference: aza-tpmt-pm -> modify  [CPIC thiopurines 2018]
+  ---
+  duration_ms: 1.659375
+  type: 'test'
+  ...
+# Subtest: reference: aza-tpmt-im -> modify  [CPIC thiopurines 2018]
+ok 50 - reference: aza-tpmt-im -> modify  [CPIC thiopurines 2018]
+  ---
+  duration_ms: 7.352793
+  type: 'test'
+  ...
+# Subtest: reference: aza-nudt-pm -> modify  [CPIC thiopurines 2018]
+ok 51 - reference: aza-nudt-pm -> modify  [CPIC thiopurines 2018]
+  ---
+  duration_ms: 7.877358
+  type: 'test'
+  ...
+# Subtest: reference: aza-nudt-im -> modify  [CPIC thiopurines 2018]
+ok 52 - reference: aza-nudt-im -> modify  [CPIC thiopurines 2018]
+  ---
+  duration_ms: 1.816495
+  type: 'test'
+  ...
+# Subtest: reference: aza-compound-im -> modify  [CPIC thiopurines (ClinPGx PA166104933): compound TPMT/NUDT15 IM need further reduction]
+ok 53 - reference: aza-compound-im -> modify  [CPIC thiopurines (ClinPGx PA166104933): compound TPMT/NUDT15 IM need further reduction]
+  ---
+  duration_ms: 7.899059
+  type: 'test'
+  ...
+# Subtest: reference: aza-both-normal -> no_flag  [CPIC thiopurines 2018]
+ok 54 - reference: aza-both-normal -> no_flag  [CPIC thiopurines 2018]
+  ---
+  duration_ms: 5.914616
+  type: 'test'
+  ...
+# Subtest: reference: aza-nudt-untested -> needs_info  [engine policy: missing data never normal]
+ok 55 - reference: aza-nudt-untested -> needs_info  [engine policy: missing data never normal]
+  ---
+  duration_ms: 1.661888
+  type: 'test'
+  ...
+# Subtest: reference: 5fu-pm -> avoid  [NCBI MGS NBK395610 (CPIC summary)]
+ok 56 - reference: 5fu-pm -> avoid  [NCBI MGS NBK395610 (CPIC summary)]
+  ---
+  duration_ms: 13.956088
+  type: 'test'
+  ...
+# Subtest: reference: 5fu-im -> modify  [NCBI MGS NBK395610 (CPIC summary)]
+ok 57 - reference: 5fu-im -> modify  [NCBI MGS NBK395610 (CPIC summary)]
+  ---
+  duration_ms: 11.402865
+  type: 'test'
+  ...
+# Subtest: reference: cap-pm -> avoid  [NCBI MGS NBK395610 (CPIC summary)]
+ok 58 - reference: cap-pm -> avoid  [NCBI MGS NBK395610 (CPIC summary)]
+  ---
+  duration_ms: 1.686269
+  type: 'test'
+  ...
+# Subtest: reference: cap-nm -> no_flag  [NCBI MGS NBK395610 (CPIC summary)]
+ok 59 - reference: cap-nm -> no_flag  [NCBI MGS NBK395610 (CPIC summary)]
+  ---
+  duration_ms: 1.737352
+  type: 'test'
+  ...
+# Subtest: reference: sim-dec -> modify  [CPIC statins 2022]
+ok 60 - reference: sim-dec -> modify  [CPIC statins 2022]
+  ---
+  duration_ms: 9.949994
+  type: 'test'
+  ...
+# Subtest: reference: sim-poor -> modify  [CPIC statins 2022]
+ok 61 - reference: sim-poor -> modify  [CPIC statins 2022]
+  ---
+  duration_ms: 1.416308
+  type: 'test'
+  ...
+# Subtest: reference: sim-norm -> no_flag  [CPIC statins 2022]
+ok 62 - reference: sim-norm -> no_flag  [CPIC statins 2022]
+  ---
+  duration_ms: 7.181127
+  type: 'test'
+  ...
+# Subtest: reference: ato-dec -> modify  [ClinPGx annotation of CPIC 2022 (atorvastatin <=40 mg start)]
+ok 63 - reference: ato-dec -> modify  [ClinPGx annotation of CPIC 2022 (atorvastatin <=40 mg start)]
+  ---
+  duration_ms: 4.482159
+  type: 'test'
+  ...
+# Subtest: reference: ato-poor -> modify  [ClinPGx annotation of CPIC 2022 (atorvastatin <=20 mg start)]
+ok 64 - reference: ato-poor -> modify  [ClinPGx annotation of CPIC 2022 (atorvastatin <=20 mg start)]
+  ---
+  duration_ms: 1.40942
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-29 -> avoid  [FDA DSC 2016-04-08: contraindicated eGFR<30]
+ok 65 - reference: met-egfr-29 -> avoid  [FDA DSC 2016-04-08: contraindicated eGFR<30]
+  ---
+  duration_ms: 1.355944
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-29.9 -> avoid  [FDA DSC 2016-04-08]
+ok 66 - reference: met-egfr-29.9 -> avoid  [FDA DSC 2016-04-08]
+  ---
+  duration_ms: 1.603356
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-30-new -> avoid  [FDA DSC 2016-04-08: starting not recommended 30-45]
+ok 67 - reference: met-egfr-30-new -> avoid  [FDA DSC 2016-04-08: starting not recommended 30-45]
+  ---
+  duration_ms: 5.240287
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-44-new -> avoid  [FDA DSC 2016-04-08]
+ok 68 - reference: met-egfr-44-new -> avoid  [FDA DSC 2016-04-08]
+  ---
+  duration_ms: 1.289281
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-44-ongoing -> conditional  [FDA DSC 2016-04-08: assess benefit/risk if on therapy]
+ok 69 - reference: met-egfr-44-ongoing -> conditional  [FDA DSC 2016-04-08: assess benefit/risk if on therapy]
+  ---
+  duration_ms: 2.632888
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-45 -> no_flag  [FDA DSC 2016-04-08 (no restriction at >=45)]
+ok 70 - reference: met-egfr-45 -> no_flag  [FDA DSC 2016-04-08 (no restriction at >=45)]
+  ---
+  duration_ms: 3.215108
+  type: 'test'
+  ...
+# Subtest: reference: met-egfr-missing -> needs_info  [engine policy: generic "impaired" flag is not an eGFR]
+ok 71 - reference: met-egfr-missing -> needs_info  [engine policy: generic "impaired" flag is not an eGFR]
+  ---
+  duration_ms: 1.761127
+  type: 'test'
+  ...
+# Subtest: missing genotype is never read as normal: default patient -> no drug with verified rules is no_flag
+ok 72 - missing genotype is never read as normal: default patient -> no drug with verified rules is no_flag
+  ---
+  duration_ms: 2.099352
+  type: 'test'
+  ...
+# Subtest: genotype state not_tested -> needs_info, not no_flag
+ok 73 - genotype state not_tested -> needs_info, not no_flag
+  ---
+  duration_ms: 2.914259
+  type: 'test'
+  ...
+# Subtest: genotype state unknown -> needs_info, not no_flag
+ok 74 - genotype state unknown -> needs_info, not no_flag
+  ---
+  duration_ms: 2.008064
+  type: 'test'
+  ...
+# Subtest: genotype state indeterminate -> needs_info, not no_flag
+ok 75 - genotype state indeterminate -> needs_info, not no_flag
+  ---
+  duration_ms: 3.910974
+  type: 'test'
+  ...
+# Subtest: genotype state conflicting -> needs_info, not no_flag
+ok 76 - genotype state conflicting -> needs_info, not no_flag
+  ---
+  duration_ms: 2.89417
+  type: 'test'
+  ...
+# Subtest: result_available without a phenotype is a validation error and is not treated as normal
+ok 77 - result_available without a phenotype is a validation error and is not treated as normal
+  ---
+  duration_ms: 7.459053
+  type: 'test'
+  ...
+# Subtest: phenotype not valid for the gene is rejected
+ok 78 - phenotype not valid for the gene is rejected
+  ---
+  duration_ms: 10.13815
+  type: 'test'
+  ...
+# Subtest: multiple simultaneous findings are ALL preserved; strongest wins
+ok 79 - multiple simultaneous findings are ALL preserved; strongest wins
+  ---
+  duration_ms: 2.281667
+  type: 'test'
+  ...
+# Subtest: safety override: an avoid finding is never downgraded by other inputs
+ok 80 - safety override: an avoid finding is never downgraded by other inputs
+  ---
+  duration_ms: 9.575131
+  type: 'test'
+  ...
+# Subtest: precedence order is avoid > modify > conditional > monitor > needs_info > informational > no_flag
+ok 81 - precedence order is avoid > modify > conditional > monitor > needs_info > informational > no_flag
+  ---
+  duration_ms: 0.308877
+  type: 'test'
+  ...
+# Subtest: no numeric safety score / confidence field exists anywhere in results (checked by key, not prose)
+ok 82 - no numeric safety score / confidence field exists anywhere in results (checked by key, not prose)
+  ---
+  duration_ms: 14.603132
+  type: 'test'
+  ...
+# Subtest: conditional finding records the category it would become
+ok 83 - conditional finding records the category it would become
+  ---
+  duration_ms: 8.49955
+  type: 'test'
+  ...
+# Subtest: blocking missing input outranks informational but not a real finding
+ok 84 - blocking missing input outranks informational but not a real finding
+  ---
+  duration_ms: 1.579293
+  type: 'test'
+  ...
+# Subtest: age missing -> codeine needs_info (age rule not evaluable)
+ok 85 - age missing -> codeine needs_info (age rule not evaluable)
+  ---
+  duration_ms: 26.265824
+  type: 'test'
+  ...
+# Subtest: breastfeeding unknown is recorded as missing info, non-blocking
+ok 86 - breastfeeding unknown is recorded as missing info, non-blocking
+  ---
+  duration_ms: 1.716963
+  type: 'test'
+  ...
+# Subtest: renal: stale eGFR adds a caveat; missing date adds a caveat
+ok 87 - renal: stale eGFR adds a caveat; missing date adds a caveat
+  ---
+  duration_ms: 7.435532
+  type: 'test'
+  ...
+# Subtest: renal: invalid eGFR values are rejected and treated as missing
+ok 88 - renal: invalid eGFR values are rejected and treated as missing
+  ---
+  duration_ms: 24.366053
+  type: 'test'
+  ...
+# Subtest: renal: future and malformed eGFR dates are rejected
+ok 89 - renal: future and malformed eGFR dates are rejected
+  ---
+  duration_ms: 13.839065
+  type: 'test'
+  ...
+# Subtest: pregnancy is recorded but reported as NOT used (no verified rule)
+ok 90 - pregnancy is recorded but reported as NOT used (no verified rule)
+  ---
+  duration_ms: 1.831917
+  type: 'test'
+  ...
+# Subtest: allergy: history not assessed -> needs_info (absence is not "no allergy")
+ok 91 - allergy: history not assessed -> needs_info (absence is not "no allergy")
+  ---
+  duration_ms: 10.122324
+  type: 'test'
+  ...
+# Subtest: allergy: none known (assessed) -> no_flag
+ok 92 - allergy: none known (assessed) -> no_flag
+  ---
+  duration_ms: 16.020853
+  type: 'test'
+  ...
+# Subtest: allergy: documented same-class -> avoid; suspected -> conditional; intolerance -> informational; unknown -> conditional
+ok 93 - allergy: documented same-class -> avoid; suspected -> conditional; intolerance -> informational; unknown -> conditional
+  ---
+  duration_ms: 15.079681
+  type: 'test'
+  ...
+# Subtest: allergy: cross-reactivity is NOT overgeneralised (documented penicillin allergy -> cephalexin is review, not avoid)
+ok 94 - allergy: cross-reactivity is NOT overgeneralised (documented penicillin allergy -> cephalexin is review, not avoid)
+  ---
+  duration_ms: 9.935817
+  type: 'test'
+  ...
+# Subtest: allergy: different class does not affect the drug
+ok 95 - allergy: different class does not affect the drug
+  ---
+  duration_ms: 12.060862
+  type: 'test'
+  ...
+# Subtest: allergy: NSAID class applies to ibuprofen and aspirin
+ok 96 - allergy: NSAID class applies to ibuprofen and aspirin
+  ---
+  duration_ms: 9.567086
+  type: 'test'
+  ...
+# Subtest: allergy: rules are labelled citation-pending, never presented as guideline-verified
+ok 97 - allergy: rules are labelled citation-pending, never presented as guideline-verified
+  ---
+  duration_ms: 1.345592
+  type: 'test'
+  ...
+# Subtest: allergy: entry detail (reaction/severity/date/source/confidence) is carried into the trigger
+ok 98 - allergy: entry detail (reaction/severity/date/source/confidence) is carried into the trigger
+  ---
+  duration_ms: 1.462589
+  type: 'test'
+  ...
+# Subtest: interactions: not configured -> notice raised and NO interaction findings or "safe" claim
+ok 99 - interactions: not configured -> notice raised and NO interaction findings or "safe" claim
+  ---
+  duration_ms: 2.052824
+  type: 'test'
+  ...
+# Subtest: interactions: configured TEST-ONLY dataset is matched by ingredient id (not substring)
+ok 100 - interactions: configured TEST-ONLY dataset is matched by ingredient id (not substring)
+  ---
+  duration_ms: 117.39511
+  type: 'test'
+  ...
+# Subtest: medication normalisation: brand names, doses and punctuation resolve to ingredients
+ok 101 - medication normalisation: brand names, doses and punctuation resolve to ingredients
+  ---
+  duration_ms: 104.912848
+  type: 'test'
+  ...
+# Subtest: duplicate: same ingredient listed twice raises a notice; candidate already prescribed gets an informational finding
+ok 102 - duplicate: same ingredient listed twice raises a notice; candidate already prescribed gets an informational finding
+  ---
+  duration_ms: 1.69124
+  type: 'test'
+  ...
+# Subtest: unrecognised medications are reported, not silently ignored
+ok 103 - unrecognised medications are reported, not silently ignored
+  ---
+  duration_ms: 3.440266
+  type: 'test'
+  ...
+# Subtest: guideline-index findings (not hand-encoded) never exceed "conditional": the engine does not turn guideline prose into avoid/modify
+ok 104 - guideline-index findings (not hand-encoded) never exceed "conditional": the engine does not turn guideline prose into avoid/modify
+  ---
+  duration_ms: 2.490626
+  type: 'test'
+  ...
+# Subtest: guideline-only drug: abnormal recorded result -> conditional pointer with all sources side by side; untested gene -> non-blocking missing info
+ok 105 - guideline-only drug: abnormal recorded result -> conditional pointer with all sources side by side; untested gene -> non-blocking missing info
+  ---
+  duration_ms: 2.817374
+  type: 'test'
+  ...
+# Subtest: guideline-only drug with a normal/negative result: no finding and never no_flag (guideline not machine-checked)
+ok 106 - guideline-only drug with a normal/negative result: no finding and never no_flag (guideline not machine-checked)
+  ---
+  duration_ms: 1.376682
+  type: 'test'
+  ...
+# Subtest: drug with no rule and no guideline is "not assessed", not safe (label-only drug)
+ok 107 - drug with no rule and no guideline is "not assessed", not safe (label-only drug)
+  ---
+  duration_ms: 1.587544
+  type: 'test'
+  ...
+# Subtest: HLA family mapping is allele-specific: a positive HLA-B*58:01 does not trigger guidelines about other alleles
+ok 108 - HLA family mapping is allele-specific: a positive HLA-B*58:01 does not trigger guidelines about other alleles
+  ---
+  duration_ms: 1.465162
+  type: 'test'
+  ...
+# Subtest: no_flag drugs with hand rules still list their related published guidelines
+ok 109 - no_flag drugs with hand rules still list their related published guidelines
+  ---
+  duration_ms: 5.61661
+  type: 'test'
+  ...
+# Subtest: no_flag wording never claims safety
+ok 110 - no_flag wording never claims safety
+  ---
+  duration_ms: 1.812977
+  type: 'test'
+  ...
+# Subtest: malformed input never throws
+ok 111 - malformed input never throws
+  ---
+  duration_ms: 45.056057
+  type: 'test'
+  ...
+# Subtest: invalid age rejected and treated as missing
+ok 112 - invalid age rejected and treated as missing
+  ---
+  duration_ms: 13.193027
+  type: 'test'
+  ...
+# Subtest: unknown allergy class and bad dates produce errors
+ok 113 - unknown allergy class and bad dates produce errors
+  ---
+  duration_ms: 2.58085
+  type: 'test'
+  ...
+# Subtest: hostile strings stay inert data (pseudonym truncated; no evaluation of content)
+ok 114 - hostile strings stay inert data (pseudonym truncated; no evaluation of content)
+  ---
+  duration_ms: 8.382073
+  type: 'test'
+  ...
+# Subtest: property: 3000 random patients satisfy all safety invariants
+ok 115 - property: 3000 random patients satisfy all safety invariants
+  ---
+  duration_ms: 904.063732
+  type: 'test'
+  ...
+# Subtest: determinism: identical input -> identical output
+ok 116 - determinism: identical input -> identical output
+  ---
+  duration_ms: 8.887119
+  type: 'test'
+  ...
+# Subtest: CSV: one row per finding (or per drug without findings) + header; consistent with on-screen results
+ok 117 - CSV: one row per finding (or per drug without findings) + header; consistent with on-screen results
+  ---
+  duration_ms: 539.192313
+  type: 'test'
+  ...
+# Subtest: CSV: formula injection is neutralised and quotes escaped
+ok 118 - CSV: formula injection is neutralised and quotes escaped
+  ---
+  duration_ms: 4.078927
+  type: 'test'
+  ...
+# Subtest: report model: includes version, date, disclaimer, completeness and every drug exactly once
+ok 119 - report model: includes version, date, disclaimer, completeness and every drug exactly once
+  ---
+  duration_ms: 2.828915
+  type: 'test'
+  ...
+# Subtest: report omits unnecessary personal data (no name, sex, weight, height fields exist)
+ok 120 - report omits unnecessary personal data (no name, sex, weight, height fields exist)
+  ---
+  duration_ms: 1.20286
+  type: 'test'
+  ...
+# Subtest: evidence traceability: every avoid/modify finding resolves to a rule with source metadata
+ok 121 - evidence traceability: every avoid/modify finding resolves to a rule with source metadata
+  ---
+  duration_ms: 3.44514
+  type: 'test'
+  ...
+# \# UI run+render (jsdom): 49.3 ms per analysis
+# Subtest: UI: initial render — severity key, directory, gene rows, timeline
+ok 122 - UI: initial render — severity key, directory, gene rows, timeline
+  ---
+  duration_ms: 502.431618
+  type: 'test'
+  ...
+# Subtest: UI: first-visit walkthrough opens as an accessible dialog; Esc closes it and restores focus; seen flag stored
+ok 123 - UI: first-visit walkthrough opens as an accessible dialog; Esc closes it and restores focus; seen flag stored
+  ---
+  duration_ms: 33.849185
+  type: 'test'
+  ...
+# Subtest: UI: tabs switch panels, update aria-selected, support arrow keys; hidden panels are not displayed
+ok 124 - UI: tabs switch panels, update aria-selected, support arrow keys; hidden panels are not displayed
+  ---
+  duration_ms: 29.377614
+  type: 'test'
+  ...
+# Subtest: UI: running with an empty form never yields no_flag for drugs that have rules (missing != normal); routine groups are collapsed and paginated
+ok 125 - UI: running with an empty form never yields no_flag for drugs that have rules (missing != normal); routine groups are collapsed and paginated
+  ---
+  duration_ms: 351.968689
+  type: 'test'
+  ...
+# Subtest: UI: entering a positive HLA-B*57:01 result gives an avoid card; modal shows rule ID, https evidence link with noopener, focus handling
+ok 126 - UI: entering a positive HLA-B*57:01 result gives an avoid card; modal shows rule ID, https evidence link with noopener, focus handling
+  ---
+  duration_ms: 154.202484
+  type: 'test'
+  ...
+# Subtest: UI: inline validation shows an accessible error on the field and treats the value as missing
+ok 127 - UI: inline validation shows an accessible error on the field and treats the value as missing
+  ---
+  duration_ms: 141.332507
+  type: 'test'
+  ...
+# Subtest: UI security: hostile text is rendered inert (no elements created, no inline styles/handlers)
+ok 128 - UI security: hostile text is rendered inert (no elements created, no inline styles/handlers)
+  ---
+  duration_ms: 269.630013
+  type: 'test'
+  ...
+# Subtest: UI security: static scan — no innerHTML/outerHTML/insertAdjacentHTML/document.write/eval/inline scripts or handlers
+ok 129 - UI security: static scan — no innerHTML/outerHTML/insertAdjacentHTML/document.write/eval/inline scripts or handlers
+  ---
+  duration_ms: 16.573237
+  type: 'test'
+  ...
+# Subtest: UI static: no object literal repeats a key such as `class` (a duplicate silently drops the first value)
+ok 130 - UI static: no object literal repeats a key such as `class` (a duplicate silently drops the first value)
+  ---
+  duration_ms: 4.45057
+  type: 'test'
+  ...
+# Subtest: UI: no secrets or network calls in client code
+ok 131 - UI: no secrets or network calls in client code
+  ---
+  duration_ms: 1.275557
+  type: 'test'
+  ...
+# Subtest: UI: category filter chips and search narrow the list
+ok 132 - UI: category filter chips and search narrow the list
+  ---
+  duration_ms: 156.468653
+  type: 'test'
+  ...
+# Subtest: UI graph: analysis mode builds relationships from findings; table fallback matches; keyboard selection shows evidence
+ok 133 - UI graph: analysis mode builds relationships from findings; table fallback matches; keyboard selection shows evidence
+  ---
+  duration_ms: 86.935591
+  type: 'test'
+  ...
+# Subtest: UI graph: filters, search, mode switch and zoom/reset work
+ok 134 - UI graph: filters, search, mode switch and zoom/reset work
+  ---
+  duration_ms: 182.925467
+  type: 'test'
+  ...
+# Subtest: UI graph: no relationship is created from shared category alone (every edge carries a rule id or is a structural patient edge)
+ok 135 - UI graph: no relationship is created from shared category alone (every edge carries a rule id or is a structural patient edge)
+  ---
+  duration_ms: 0.737333
+  type: 'test'
+  ...
+# Subtest: UI export: CSV blob equals the engine CSV for the on-screen analysis (incl. UTF-8 BOM for Excel)
+ok 136 - UI export: CSV blob equals the engine CSV for the on-screen analysis (incl. UTF-8 BOM for Excel)
+  ---
+  duration_ms: 73.465605
+  type: 'test'
+  ...
+# Subtest: UI export: print report contains version, date, disclaimer, and every drug; print() is invoked
+ok 137 - UI export: print report contains version, date, disclaimer, and every drug; print() is invoked
+  ---
+  duration_ms: 1.370621
+  type: 'test'
+  ...
+# Subtest: UI: directory search + catalog modal shows rules/evidence or "not assessed", and no unverified monograph text
+ok 138 - UI: directory search + catalog modal shows rules/evidence or "not assessed", and no unverified monograph text
+  ---
+  duration_ms: 64.755161
+  type: 'test'
+  ...
+# Subtest: UI accessibility: every form control has an accessible name; tabs/panels wired; buttons are named; modal close is labelled
+ok 139 - UI accessibility: every form control has an accessible name; tabs/panels wired; buttons are named; modal close is labelled
+  ---
+  duration_ms: 72.115754
+  type: 'test'
+  ...
+# Subtest: UI: severity is conveyed by text + icon, not colour alone
+ok 140 - UI: severity is conveyed by text + icon, not colour alone
+  ---
+  duration_ms: 1.844916
+  type: 'test'
+  ...
+# Subtest: UI: reset clears results, notices, print report and re-enables a fresh form
+ok 141 - UI: reset clears results, notices, print report and re-enables a fresh form
+  ---
+  duration_ms: 15.57036
+  type: 'test'
+  ...
+# Subtest: UI performance: full analysis + render stays fast (jsdom, ~210 drugs)
+ok 142 - UI performance: full analysis + render stays fast (jsdom, ~210 drugs)
+  ---
+  duration_ms: 988.097409
+  type: 'test'
+  ...
+# Subtest: UI history: typeahead suggests standard terms; unknown free text is rejected; chips can be added and removed
+ok 143 - UI history: typeahead suggests standard terms; unknown free text is rejected; chips can be added and removed
+  ---
+  duration_ms: 83.02189
+  type: 'test'
+  ...
+# Subtest: UI history: a recorded term loads its SIDER shard, adds informational label notes, and never changes categories
+ok 144 - UI history: a recorded term loads its SIDER shard, adds informational label notes, and never changes categories
+  ---
+  duration_ms: 80.387246
+  type: 'test'
+  ...
+# Subtest: UI modal: published guidelines are shown side by side with sources and links; label effects load lazily with filter and match flag
+ok 145 - UI modal: published guidelines are shown side by side with sources and links; label effects load lazily with filter and match flag
+  ---
+  duration_ms: 128.697233
+  type: 'test'
+  ...
+# Subtest: UI modal: guideline-pointer findings render each source as its own block (not one wall of text)
+ok 146 - UI modal: guideline-pointer findings render each source as its own block (not one wall of text)
+  ---
+  duration_ms: 110.77758
+  type: 'test'
+  ...
+# Subtest: UI scope: label-only drugs are evaluated only when the option is ticked
+ok 147 - UI scope: label-only drugs are evaluated only when the option is ticked
+  ---
+  duration_ms: 323.693843
+  type: 'test'
+  ...
+# Subtest: UI directory: pagination, coverage text, alias search, and search by label side effect
+ok 148 - UI directory: pagination, coverage text, alias search, and search by label side effect
+  ---
+  duration_ms: 242.392106
+  type: 'test'
+  ...
+# Subtest: UI graph: published-guideline edges appear in analysis mode and, in catalog mode, only when searching
+ok 149 - UI graph: published-guideline edges appear in analysis mode and, in catalog mode, only when searching
+  ---
+  duration_ms: 328.835178
+  type: 'test'
+  ...
+# Subtest: UI attribution: footer, methodology and sources state ClinPGx CC BY-SA 4.0 and the SIDER licence caveat
+ok 150 - UI attribution: footer, methodology and sources state ClinPGx CC BY-SA 4.0 and the SIDER licence caveat
+  ---
+  duration_ms: 6.684139
+  type: 'test'
+  ...
+# Subtest: UI: no inline styles or handlers after all new views have rendered
+ok 151 - UI: no inline styles or handlers after all new views have rendered
+  ---
+  duration_ms: 38.346803
+  type: 'test'
+  ...
+1..151
+# tests 151
+# suites 0
+# pass 151
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11321.770224

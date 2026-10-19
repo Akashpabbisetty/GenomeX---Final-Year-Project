@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenomX Advisor — Pharmacogenomic Drug–Allergy Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1 class="hero-title"><span class="dot"></span>GenomX Advisor</h1>
+      <p class="hero-sub">Clinical decision support for pharmacogenomics. GenomX Advisor cross-references a patient's genetic profile and allergy history against a curated drug knowledge base to flag unsafe prescriptions before they reach the patient — with a clear, evidence-backed explanation behind every recommendation.</p>
+    </div>
+    <div class="hero-actions">
+      <button class="icon-btn" id="themeToggle">🌙 Dark mode</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="active" data-view="home" role="tab" aria-selected="true">Home</button>
+    <button data-view="dashboard" role="tab" aria-selected="false">Dashboard</button>
+    <button data-view="directory" role="tab" aria-selected="false">Drug Directory</button>
+    <button data-view="graph" role="tab" aria-selected="false">Knowledge Graph</button>
+    <button data-view="about" role="tab" aria-selected="false">Methodology</button>
+  </nav>
+
+  <!-- ============ HOME ============ -->
+  <section class="view active print-active" id="view-home">
+    <div class="panel">
+      <div class="overview-grid">
+        <div>
+          <h2>What is GenomX Advisor?</h2>
+          <p>GenomX Advisor analyzes a patient's genetic markers and documented allergy history against a curated pharmacogenomic knowledge base spanning drugs, genes, and allergy classes. For each medication under consideration, it returns a clear compatibility rating — Safe, Monitor, Dose Adjustment, or Contraindicated — along with the specific gene, allergy, or clinical factor driving that assessment.</p>
+          <p>Patient data is validated and encoded, a knowledge graph links the patient to the relevant genetic and allergy factors, compatibility is scored against each candidate drug, and a ranked recommendation is returned with full supporting evidence. Every result traces back to a specific, inspectable rule rather than an opaque score.</p>
+          <div class="cta-row">
+            <button class="icon-btn" id="goDashboard">Go to patient dashboard →</button>
+          </div>
+        </div>
+        <div>
+          <p class="section-label"><span class="num">i</span>Severity scale used throughout</p>
+          <div class="severity-key">
+            <div class="row"><span class="badge safe">🟢 Safe</span> No genetic, allergy, or clinical contraindication found.</div>
+            <div class="row"><span class="badge monitor">🟡 Monitor</span> Proceed with closer clinical/lab monitoring.</div>
+            <div class="row"><span class="badge adjust">🟠 Dose adjustment</span> Usable, but dose or agent choice needs adjusting.</div>
+            <div class="row"><span class="badge risk">🔴 Contraindicated</span> Avoid; use a suggested alternative.</div>
+          </div>
+          <p class="section-label" style="margin-top:18px;"><span class="num">i</span>How it works</p>
+          <div class="step-mini"><span class="n">1</span><div><h4>Preprocess</h4><p>Clean & encode patient, drug, allergy data.</p></div></div>
+          <div class="step-mini"><span class="n">2</span><div><h4>Build graph</h4><p>Patient ↔ gene/allergy ↔ drug edges.</p></div></div>
+          <div class="step-mini"><span class="n">3</span><div><h4>Score</h4><p>Rule-weighted compatibility per drug.</p></div></div>
+          <div class="step-mini"><span class="n">4</span><div><h4>Recommend</h4><p>Compatible / flagged lists with alternatives.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DASHBOARD ============ -->
+  <section class="view" id="view-dashboard">
+    <div class="dash-grid">
+      <div class="panel">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggleBtn" aria-expanded="true" aria-controls="sidebarBody">
+          <span>Patient profile</span><span>▾</span>
+        </button>
+        <div id="sidebarBody">
+          <p class="section-label"><span class="num">1</span>Patient demographics</p>
+          <div class="field-row">
+            <div class="field"><label for="pName">Name</label><input id="pName" type="text" placeholder="Optional"></div>
+            <div class="field"><label for="pAge">Age</label><input id="pAge" type="number" min="0" max="120" placeholder="e.g. 42"></div>
+            <div class="field"><label for="pSex">Sex</label>
+              <select id="pSex"><option value="">Select</option><option>Female</option><option>Male</option><option>Other</option></select>
+            </div>
+            <div class="field"><label for="pWeight">Weight (kg)</label><input id="pWeight" type="number" min="0" placeholder="e.g. 70"></div>
+            <div class="field"><label for="pHeight">Height (cm)</label><input id="pHeight" type="number" min="0" placeholder="e.g. 170"></div>
+            <div class="field full"><span class="bmi-readout" id="bmiOut">BMI: —</span></div>
+            <div class="field full"><label for="pDiagnosis">Diagnosis / indication</label><input id="pDiagnosis" type="text" placeholder="e.g. Type 2 diabetes, HIV"></div>
+            <div class="field full"><label for="pMeds">Current medications</label><textarea id="pMeds" placeholder="e.g. warfarin, lisinopril"></textarea></div>
+            <div class="field full"><label for="pHistory">Medical history notes</label><textarea id="pHistory" placeholder="Optional free text"></textarea></div>
+            <div class="field"><label for="pRenal">Kidney function</label>
+              <select id="pRenal"><option value="normal">Normal</option><option value="impaired">Impaired</option></select>
+            </div>
+            <div class="field"><label for="pHepatic">Liver function</label>
+              <select id="pHepatic"><option value="normal">Normal</option><option value="impaired">Impaired</option></select>
+            </div>
+            <div class="field full"><label for="pPregnant">Pregnancy status</label>
+              <select id="pPregnant"><option value="no">Not pregnant / not applicable</option><option value="yes">Pregnant</option></select>
+            </div>
+          </div>
+
+          <p class="section-label" style="margin-top:16px;"><span class="num">2</span>Genetic risk markers present</p>
+          <input type="text" class="search-input" id="geneSearch" placeholder="Search gene, e.g. CYP2D6…" aria-label="Search genetic markers">
+          <div class="check-list" id="gene-checks"></div>
+
+          <p class="section-label" style="margin-top:16px;"><span class="num">3</span>Documented allergy history</p>
+          <input type="text" class="search-input" id="allergySearch" placeholder="Search allergy, e.g. sulfa…" aria-label="Search allergies">
+          <div class="check-list" id="allergy-checks"></div>
+
+          <button class="run" id="runBtn">Run compatibility analysis</button>
+          <div class="pipeline" id="pipeline"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" id="resultsPanel" style="margin-bottom:16px;">
+          <div class="toolbar-row">
+            <p class="section-label" style="margin:0;"><span class="num">4</span>Recommendation output</p>
+            <div class="export-btns">
+              <button id="exportCsv">⬇ CSV</button>
+              <button id="exportPrint">🖨 Print / PDF</button>
+            </div>
+          </div>
+          <span class="live-badge" id="engineBadge" style="margin-bottom:12px; display:inline-flex;"><span class="live-dot"></span>Awaiting first analysis</span>
+          <div class="results-cols">
+            <div>
+              <div class="col-head"><h3>Compatible</h3><span class="count-pill" id="safeCount">0</span></div>
+              <div id="safeList"><div class="empty-state">Run the analysis to see compatible drugs.</div></div>
+            </div>
+            <div>
+              <div class="col-head"><h3>Flagged</h3><span class="count-pill" id="riskCount">0</span></div>
+              <div id="riskList"><div class="empty-state">Run the analysis to see flagged drugs.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="toolbar-row">
+            <p class="section-label" style="margin:0;"><span class="num">5</span>Patient care timeline</p>
+            <span class="live-badge" id="liveBadge"><span class="live-dot"></span>Live</span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DRUG DIRECTORY ============ -->
+  <section class="view" id="view-directory">
+    <div class="panel">
+      <p class="section-label"><span class="num">i</span>Drug directory</p>
+      <input type="text" class="search-input" id="dirSearch" placeholder="Search medicine or drug class…" aria-label="Search drug directory">
+      <div class="dir-grid" id="dirGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ GRAPH ============ -->
+  <section class="view" id="view-graph">
+    <div class="panel">
+      <p class="section-label"><span class="num">6</span>Knowledge graph explorer</p>
+      <div class="graph-controls">
+        <div class="graph-legend">
+          <span><i style="background:#10201C"></i>Patient</span>
+          <span><i style="background:#6753D6"></i>Gene / variant</span>
+          <span><i style="background:#C8801B"></i>Allergy class</span>
+          <span><i style="background:#9AA8A2"></i>Drug (unassessed)</span>
+          <span><i style="background:#0E8C7C"></i>Safe</span>
+          <span><i style="background:#C6432E"></i>Contraindicated</span>
+        </div>
+        <div class="filter-chips">
+          <button class="filter-chip active" data-filter="gene">Genes</button>
+          <button class="filter-chip active" data-filter="allergy">Allergies</button>
+          <button class="filter-chip active" data-filter="drug">Drugs</button>
+        </div>
+        <div class="zoom-ctrls">
+          <button id="zoomOut" aria-label="Zoom out">−</button>
+          <button id="zoomReset" aria-label="Reset zoom">⤾</button>
+          <button id="zoomIn" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--ink-soft); margin-top:0;">Click a gene or allergy node to highlight its connected drugs. Hover any node or edge for details. Drag to pan, scroll/pinch or use the buttons to zoom.</p>
+      <div class="graph-frame">
+        <svg id="kg" viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knowledge graph of patient, genes, allergies and drugs"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / METHODOLOGY ============ -->
+  <section class="view" id="view-about">
+    <div class="panel">
+      <p class="section-label"><span class="num">7</span>How the pipeline works</p>
+      <ol class="algo-list" id="algoList"></ol>
+      <div class="disclaimer">
+        <strong>Prototype notice.</strong> GenomX Advisor is a decision-support prototype, not a certified medical device. It uses a curated gene/drug/allergy knowledge base and a transparent, rule-based scoring engine rather than a trained clinical model, so every recommendation is traceable to a specific rule. It must not be used for actual prescribing decisions — consult CPIC/PharmGKB guidelines and a qualified clinician or pharmacist for real pharmacogenomic decisions.
+      </div>
+    </div>
+  </section>
+
+  <footer>GenomX Advisor · Pharmacogenomic decision-support prototype · Not for clinical use</footer>
+</div>
+
+<!-- Floating tooltip (positioned dynamically by app.js) -->
+<div id="gxTooltip" role="tooltip"></div>
+
+<!-- Drug detail modal -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

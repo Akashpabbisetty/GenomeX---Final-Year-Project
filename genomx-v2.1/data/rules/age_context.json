@@ -1,0 +1,100 @@
+{
+ "schema": "rules/1",
+ "module": "age_context",
+ "rules": [
+  {
+   "version": "1.0.0",
+   "status": "verified",
+   "strength": null,
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Verify against the current FDA label."
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited source."
+   },
+   "blocking": true,
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "id": "R-AGE-CODEINE-LT12",
+   "module": "age",
+   "drug": "codeine",
+   "condition": {
+    "type": "age",
+    "ltYears": 12
+   },
+   "action": "avoid",
+   "headline": "Codeine is contraindicated in children younger than 12",
+   "rationale": "FDA states codeine is contraindicated in children younger than 12 years.",
+   "evidence": [
+    "E-FDA-CODEINE-2017"
+   ]
+  },
+  {
+   "version": "1.0.0",
+   "status": "verified",
+   "strength": null,
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Risk factors (obesity, sleep apnea, lung disease, recent tonsillectomy/adenoidectomy) are not captured; clinician review required."
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited source."
+   },
+   "blocking": false,
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "id": "R-AGE-CODEINE-12-17",
+   "module": "age",
+   "drug": "codeine",
+   "condition": {
+    "type": "age",
+    "gteYears": 12,
+    "ltYears": 18
+   },
+   "action": "conditional",
+   "headline": "Codeine in adolescents 12–17: FDA advises avoiding use with certain risk factors",
+   "rationale": "FDA advises against codeine in adolescents 12–18 with risk factors such as obesity, obstructive sleep apnea or severe lung disease, and codeine is contraindicated for post-tonsillectomy/adenoidectomy pain in patients under 18. These risk factors are not collected in this release.",
+   "evidence": [
+    "E-FDA-CODEINE-2017"
+   ]
+  },
+  {
+   "version": "1.0.0",
+   "status": "verified",
+   "strength": null,
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Verify against the current FDA label."
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited source."
+   },
+   "blocking": false,
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "id": "R-BF-CODEINE-BREASTFEEDING",
+   "module": "breastfeeding",
+   "drug": "codeine",
+   "condition": {
+    "type": "breastfeeding",
+    "equals": "yes"
+   },
+   "action": "avoid",
+   "headline": "FDA recommends against codeine use in breastfeeding mothers",
+   "rationale": "FDA recommends against the use of codeine in breastfeeding mothers.",
+   "evidence": [
+    "E-FDA-CODEINE-2017"
+   ]
+  }
+ ]
+}

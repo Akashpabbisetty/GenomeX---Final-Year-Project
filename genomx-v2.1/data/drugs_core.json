@@ -1,0 +1,254 @@
+{
+ "schema": "drugs/1",
+ "note": "Hand-curated core catalog (ids/classes/aliases). scripts/ingest/ingest.py extends it into data/drugs.json.",
+ "drugs": [
+  {
+   "id": "abacavir",
+   "name": "Abacavir",
+   "class": "Antiretroviral (NRTI)",
+   "aliases": [
+    "ziagen"
+   ]
+  },
+  {
+   "id": "allopurinol",
+   "name": "Allopurinol",
+   "class": "Xanthine oxidase inhibitor",
+   "aliases": [
+    "zyloprim"
+   ]
+  },
+  {
+   "id": "amitriptyline",
+   "name": "Amitriptyline",
+   "class": "Tricyclic antidepressant",
+   "aliases": [
+    "elavil"
+   ]
+  },
+  {
+   "id": "amoxicillin",
+   "name": "Amoxicillin",
+   "class": "Beta-lactam antibiotic",
+   "aliases": [
+    "amoxil"
+   ]
+  },
+  {
+   "id": "aspirin",
+   "name": "Aspirin",
+   "class": "NSAID / antiplatelet",
+   "aliases": [
+    "acetylsalicylic acid",
+    "asa"
+   ]
+  },
+  {
+   "id": "atomoxetine",
+   "name": "Atomoxetine",
+   "class": "Selective norepinephrine reuptake inhibitor (ADHD)",
+   "aliases": [
+    "strattera"
+   ]
+  },
+  {
+   "id": "atorvastatin",
+   "name": "Atorvastatin",
+   "class": "Statin (HMG-CoA reductase inhibitor)",
+   "aliases": [
+    "lipitor"
+   ]
+  },
+  {
+   "id": "azathioprine",
+   "name": "Azathioprine",
+   "class": "Thiopurine immunosuppressant",
+   "aliases": [
+    "imuran"
+   ]
+  },
+  {
+   "id": "capecitabine",
+   "name": "Capecitabine",
+   "class": "Oral fluoropyrimidine prodrug",
+   "aliases": [
+    "xeloda"
+   ]
+  },
+  {
+   "id": "carbamazepine",
+   "name": "Carbamazepine",
+   "class": "Anticonvulsant / mood stabilizer",
+   "aliases": [
+    "tegretol"
+   ]
+  },
+  {
+   "id": "cephalexin",
+   "name": "Cephalexin",
+   "class": "Cephalosporin antibiotic",
+   "aliases": [
+    "cefalexin",
+    "keflex"
+   ]
+  },
+  {
+   "id": "citalopram",
+   "name": "Citalopram",
+   "class": "SSRI antidepressant",
+   "aliases": [
+    "celexa"
+   ]
+  },
+  {
+   "id": "clopidogrel",
+   "name": "Clopidogrel",
+   "class": "Antiplatelet (P2Y12 inhibitor)",
+   "aliases": [
+    "plavix"
+   ]
+  },
+  {
+   "id": "codeine",
+   "name": "Codeine",
+   "class": "Opioid analgesic (prodrug)",
+   "aliases": []
+  },
+  {
+   "id": "escitalopram",
+   "name": "Escitalopram",
+   "class": "SSRI antidepressant",
+   "aliases": [
+    "lexapro"
+   ]
+  },
+  {
+   "id": "fluorouracil",
+   "name": "Fluorouracil (5-FU)",
+   "class": "Antimetabolite chemotherapy (fluoropyrimidine)",
+   "aliases": [
+    "5-fu",
+    "5fu",
+    "fluorouracil (5-fu)"
+   ]
+  },
+  {
+   "id": "ibuprofen",
+   "name": "Ibuprofen",
+   "class": "NSAID",
+   "aliases": [
+    "advil",
+    "motrin"
+   ]
+  },
+  {
+   "id": "irinotecan",
+   "name": "Irinotecan",
+   "class": "Topoisomerase I inhibitor chemotherapy",
+   "aliases": [
+    "camptosar"
+   ]
+  },
+  {
+   "id": "levothyroxine",
+   "name": "Levothyroxine",
+   "class": "Thyroid hormone replacement",
+   "aliases": [
+    "synthroid"
+   ]
+  },
+  {
+   "id": "metformin",
+   "name": "Metformin",
+   "class": "Biguanide (antidiabetic)",
+   "aliases": [
+    "glucophage"
+   ]
+  },
+  {
+   "id": "omeprazole",
+   "name": "Omeprazole",
+   "class": "Proton pump inhibitor",
+   "aliases": [
+    "prilosec"
+   ]
+  },
+  {
+   "id": "ondansetron",
+   "name": "Ondansetron",
+   "class": "5-HT3 antagonist antiemetic",
+   "aliases": [
+    "zofran"
+   ]
+  },
+  {
+   "id": "oxcarbazepine",
+   "name": "Oxcarbazepine",
+   "class": "Anticonvulsant",
+   "aliases": [
+    "trileptal"
+   ]
+  },
+  {
+   "id": "phenytoin",
+   "name": "Phenytoin",
+   "class": "Anticonvulsant",
+   "aliases": [
+    "dilantin"
+   ]
+  },
+  {
+   "id": "rosuvastatin",
+   "name": "Rosuvastatin",
+   "class": "Statin (HMG-CoA reductase inhibitor)",
+   "aliases": [
+    "crestor"
+   ]
+  },
+  {
+   "id": "simvastatin",
+   "name": "Simvastatin",
+   "class": "Statin (HMG-CoA reductase inhibitor)",
+   "aliases": [
+    "zocor"
+   ]
+  },
+  {
+   "id": "tamoxifen",
+   "name": "Tamoxifen",
+   "class": "Selective estrogen receptor modulator",
+   "aliases": [
+    "nolvadex"
+   ]
+  },
+  {
+   "id": "trimethoprim-sulfamethoxazole",
+   "name": "Trimethoprim-Sulfamethoxazole",
+   "class": "Sulfonamide antibiotic",
+   "aliases": [
+    "co-trimoxazole",
+    "cotrimoxazole",
+    "bactrim",
+    "septra",
+    "trimethoprim/sulfamethoxazole"
+   ]
+  },
+  {
+   "id": "voriconazole",
+   "name": "Voriconazole",
+   "class": "Antifungal (triazole)",
+   "aliases": [
+    "vfend"
+   ]
+  },
+  {
+   "id": "warfarin",
+   "name": "Warfarin",
+   "class": "Anticoagulant (vitamin K antagonist)",
+   "aliases": [
+    "coumadin",
+    "jantoven"
+   ]
+  }
+ ]
+}

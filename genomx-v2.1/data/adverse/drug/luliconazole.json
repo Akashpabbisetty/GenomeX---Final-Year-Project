@@ -1,0 +1,1 @@
+{"drug":"luliconazole","siderNames":["luliconazole"],"cids":["CID100214339"],"note":null,"n":4,"cols":["cui","freq","lo","hi","placeboHi","rank"],"effects":[["C0007642","postmarketing",0.0,0.001,null,1e-05],["C0011616","postmarketing",0.0,0.001,null,1e-05],["C1384589",null,null,null,null,0],["C0040259",null,null,null,null,0]]}

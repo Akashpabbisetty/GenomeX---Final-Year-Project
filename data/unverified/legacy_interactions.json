@@ -1,0 +1,373 @@
+{
+ "WARNING": "UNVERIFIED. Hand-written in the prototype with no sources. NOT used by the engine.",
+ "interactions": {
+  "Warfarin": [
+   {
+    "other": "Fluconazole",
+    "severity": "major",
+    "mechanism": "CYP2C9 inhibition slows warfarin clearance",
+    "effect": "↑ INR, ↑ bleeding risk",
+    "management": "Avoid if possible; if required, reduce warfarin dose and monitor INR closely"
+   },
+   {
+    "other": "Amiodarone",
+    "severity": "major",
+    "mechanism": "CYP2C9 and CYP3A4 inhibition",
+    "effect": "↑ INR, ↑ bleeding risk",
+    "management": "Reduce warfarin dose ~30-50% and monitor INR closely"
+   },
+   {
+    "other": "Clarithromycin",
+    "severity": "major",
+    "mechanism": "CYP3A4 inhibition",
+    "effect": "↑ INR, ↑ bleeding risk",
+    "management": "Monitor INR closely during and after therapy"
+   },
+   {
+    "other": "Rifampin",
+    "severity": "major",
+    "mechanism": "Strong CYP450 induction accelerates warfarin clearance",
+    "effect": "↓ INR, ↓ anticoagulant effect, clotting risk",
+    "management": "Monitor INR closely; warfarin dose often needs substantial increase"
+   },
+   {
+    "other": "Aspirin",
+    "severity": "major",
+    "mechanism": "Additive antiplatelet and anticoagulant effect",
+    "effect": "↑ bleeding risk",
+    "management": "Avoid unless specifically indicated; monitor for bleeding"
+   },
+   {
+    "other": "Ibuprofen",
+    "severity": "major",
+    "mechanism": "GI mucosal injury plus antiplatelet effect, additive to anticoagulation",
+    "effect": "↑ GI bleeding risk",
+    "management": "Avoid; use acetaminophen for analgesia instead"
+   },
+   {
+    "other": "Trimethoprim-Sulfamethoxazole",
+    "severity": "major",
+    "mechanism": "CYP2C9 inhibition and vitamin K antagonism",
+    "effect": "↑ INR, ↑ bleeding risk",
+    "management": "Avoid if possible; monitor INR closely if co-prescribed"
+   },
+   {
+    "other": "Amoxicillin",
+    "severity": "moderate",
+    "mechanism": "Altered gut flora reduces vitamin K synthesis",
+    "effect": "INR fluctuation",
+    "management": "Monitor INR during and after antibiotic course"
+   },
+   {
+    "other": "Cephalexin",
+    "severity": "moderate",
+    "mechanism": "Altered gut flora reduces vitamin K synthesis",
+    "effect": "INR fluctuation",
+    "management": "Monitor INR during and after antibiotic course"
+   },
+   {
+    "other": "Carbamazepine",
+    "severity": "moderate",
+    "mechanism": "CYP450 induction accelerates warfarin clearance",
+    "effect": "↓ INR, reduced anticoagulant effect",
+    "management": "Monitor INR closely; dose adjustment often needed"
+   },
+   {
+    "other": "Phenytoin",
+    "severity": "moderate",
+    "mechanism": "Bidirectional CYP2C9 competition",
+    "effect": "Unpredictable INR changes in either direction",
+    "management": "Monitor INR closely on initiation or discontinuation"
+   }
+  ],
+  "Clopidogrel": [
+   {
+    "other": "Omeprazole",
+    "severity": "major",
+    "mechanism": "CYP2C19 inhibition reduces clopidogrel activation",
+    "effect": "↓ antiplatelet effect, ↑ thrombotic/stent-occlusion risk",
+    "management": "Use pantoprazole or an H2-blocker instead if acid suppression is needed"
+   },
+   {
+    "other": "Voriconazole",
+    "severity": "moderate",
+    "mechanism": "CYP2C19 inhibition reduces clopidogrel activation",
+    "effect": "↓ antiplatelet effect",
+    "management": "Monitor for reduced antiplatelet effect; consider alternative antifungal"
+   },
+   {
+    "other": "Aspirin",
+    "severity": "moderate",
+    "mechanism": "Additive antiplatelet effect",
+    "effect": "↑ bleeding risk",
+    "management": "Often intentionally co-prescribed short-term; monitor for bleeding"
+   },
+   {
+    "other": "Warfarin",
+    "severity": "major",
+    "mechanism": "Additive antiplatelet and anticoagulant effect",
+    "effect": "↑ bleeding risk",
+    "management": "Avoid triple therapy unless specifically indicated; monitor closely"
+   }
+  ],
+  "Simvastatin": [
+   {
+    "other": "Voriconazole",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 inhibition raises statin exposure",
+    "effect": "↑ myopathy / rhabdomyolysis risk",
+    "management": "Avoid combination; suspend statin during antifungal course"
+   },
+   {
+    "other": "Amiodarone",
+    "severity": "major",
+    "mechanism": "CYP3A4 inhibition raises statin exposure",
+    "effect": "↑ myopathy / rhabdomyolysis risk",
+    "management": "Cap simvastatin at 20mg/day per FDA labeling, or switch statin"
+   },
+   {
+    "other": "Clarithromycin",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 inhibition",
+    "effect": "↑ myopathy / rhabdomyolysis risk",
+    "management": "Suspend statin during antibiotic course"
+   },
+   {
+    "other": "Fluconazole",
+    "severity": "major",
+    "mechanism": "CYP3A4 inhibition raises statin exposure",
+    "effect": "↑ myopathy risk",
+    "management": "Consider temporary statin suspension during antifungal course"
+   }
+  ],
+  "Atorvastatin": [
+   {
+    "other": "Voriconazole",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 inhibition raises statin exposure",
+    "effect": "↑ myopathy / rhabdomyolysis risk",
+    "management": "Avoid combination; suspend statin during antifungal course"
+   },
+   {
+    "other": "Clarithromycin",
+    "severity": "moderate",
+    "mechanism": "CYP3A4 inhibition",
+    "effect": "↑ myopathy risk",
+    "management": "Consider temporary statin suspension during antibiotic course"
+   },
+   {
+    "other": "Amiodarone",
+    "severity": "moderate",
+    "mechanism": "CYP3A4 inhibition",
+    "effect": "↑ myopathy risk",
+    "management": "Monitor for muscle symptoms; consider dose reduction"
+   }
+  ],
+  "Rosuvastatin": [
+   {
+    "other": "Fluconazole",
+    "severity": "minor",
+    "mechanism": "Minimal CYP3A4 dependence, mild interaction",
+    "effect": "Slightly increased statin exposure",
+    "management": "Routine monitoring usually sufficient"
+   }
+  ],
+  "Azathioprine": [
+   {
+    "other": "Allopurinol",
+    "severity": "major",
+    "mechanism": "Xanthine oxidase inhibition blocks thiopurine breakdown",
+    "effect": "Severe, potentially fatal myelosuppression",
+    "management": "Reduce azathioprine dose by ~75% if co-administration is unavoidable"
+   }
+  ],
+  "Tamoxifen": [
+   {
+    "other": "Fluoxetine",
+    "severity": "major",
+    "mechanism": "Strong CYP2D6 inhibition blocks activation to endoxifen",
+    "effect": "↓ tamoxifen efficacy",
+    "management": "Use an SSRI with minimal CYP2D6 inhibition (e.g. citalopram) instead"
+   },
+   {
+    "other": "Paroxetine",
+    "severity": "major",
+    "mechanism": "Strong CYP2D6 inhibition blocks activation to endoxifen",
+    "effect": "↓ tamoxifen efficacy",
+    "management": "Use an SSRI with minimal CYP2D6 inhibition instead"
+   }
+  ],
+  "Codeine": [
+   {
+    "other": "Fluoxetine",
+    "severity": "moderate",
+    "mechanism": "CYP2D6 inhibition blocks activation to morphine",
+    "effect": "↓ analgesic efficacy",
+    "management": "Consider a non-codeine analgesic"
+   },
+   {
+    "other": "Alprazolam",
+    "severity": "major",
+    "mechanism": "Additive CNS and respiratory depression",
+    "effect": "↑ risk of sedation and respiratory depression",
+    "management": "Avoid combination where possible; if required, use lowest effective doses with monitoring"
+   }
+  ],
+  "Ibuprofen": [
+   {
+    "other": "Warfarin",
+    "severity": "major",
+    "mechanism": "GI mucosal injury plus antiplatelet effect, additive to anticoagulation",
+    "effect": "↑ GI bleeding risk",
+    "management": "Avoid; use acetaminophen for analgesia instead"
+   },
+   {
+    "other": "Lisinopril",
+    "severity": "moderate",
+    "mechanism": "Reduced renal prostaglandin synthesis blunts antihypertensive effect",
+    "effect": "↓ blood pressure control, ↑ renal impairment risk",
+    "management": "Monitor blood pressure and renal function; limit duration of NSAID use"
+   }
+  ],
+  "Aspirin": [
+   {
+    "other": "Warfarin",
+    "severity": "major",
+    "mechanism": "Additive antiplatelet and anticoagulant effect",
+    "effect": "↑ bleeding risk",
+    "management": "Avoid unless specifically indicated; monitor for bleeding"
+   }
+  ],
+  "Citalopram": [
+   {
+    "other": "Omeprazole",
+    "severity": "moderate",
+    "mechanism": "CYP2C19 inhibition raises citalopram exposure",
+    "effect": "↑ QT-prolongation risk at higher exposure",
+    "management": "Consider dose reduction or pantoprazole instead"
+   },
+   {
+    "other": "Amiodarone",
+    "severity": "major",
+    "mechanism": "Additive QT prolongation",
+    "effect": "↑ risk of Torsades de Pointes",
+    "management": "Avoid combination where possible; ECG monitoring if required"
+   },
+   {
+    "other": "Ondansetron",
+    "severity": "moderate",
+    "mechanism": "Additive QT prolongation",
+    "effect": "↑ QT-prolongation risk",
+    "management": "Use lowest effective doses; consider ECG monitoring"
+   },
+   {
+    "other": "Warfarin",
+    "severity": "moderate",
+    "mechanism": "Impaired platelet serotonin uptake adds to anticoagulant effect",
+    "effect": "↑ bleeding risk",
+    "management": "Monitor for bleeding, especially at treatment initiation"
+   }
+  ],
+  "Escitalopram": [
+   {
+    "other": "Omeprazole",
+    "severity": "moderate",
+    "mechanism": "CYP2C19 inhibition raises escitalopram exposure",
+    "effect": "↑ QT-prolongation risk at higher exposure",
+    "management": "Consider dose reduction or pantoprazole instead"
+   },
+   {
+    "other": "Amiodarone",
+    "severity": "major",
+    "mechanism": "Additive QT prolongation",
+    "effect": "↑ risk of Torsades de Pointes",
+    "management": "Avoid combination where possible; ECG monitoring if required"
+   }
+  ],
+  "Carbamazepine": [
+   {
+    "other": "Voriconazole",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 induction dramatically lowers voriconazole levels",
+    "effect": "Voriconazole treatment failure",
+    "management": "Combination is generally contraindicated; use an alternative antifungal"
+   },
+   {
+    "other": "Warfarin",
+    "severity": "moderate",
+    "mechanism": "CYP450 induction accelerates warfarin clearance",
+    "effect": "↓ INR, reduced anticoagulant effect",
+    "management": "Monitor INR closely; dose adjustment often needed"
+   }
+  ],
+  "Voriconazole": [
+   {
+    "other": "Carbamazepine",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 induction dramatically lowers voriconazole levels",
+    "effect": "Voriconazole treatment failure",
+    "management": "Combination is generally contraindicated; use an alternative antifungal"
+   },
+   {
+    "other": "Rifampin",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 induction",
+    "effect": "Voriconazole treatment failure",
+    "management": "Combination is contraindicated"
+   },
+   {
+    "other": "Simvastatin",
+    "severity": "major",
+    "mechanism": "Strong CYP3A4 inhibition raises statin exposure",
+    "effect": "↑ myopathy / rhabdomyolysis risk in the statin",
+    "management": "Suspend statin during antifungal course"
+   },
+   {
+    "other": "Phenytoin",
+    "severity": "moderate",
+    "mechanism": "Bidirectional CYP2C9/CYP3A4 interaction",
+    "effect": "Altered levels of both drugs",
+    "management": "Monitor levels of both drugs; dose adjustment often needed"
+   }
+  ],
+  "Omeprazole": [
+   {
+    "other": "Clopidogrel",
+    "severity": "major",
+    "mechanism": "CYP2C19 inhibition reduces clopidogrel activation",
+    "effect": "↓ antiplatelet effect, ↑ thrombotic/stent-occlusion risk",
+    "management": "Use pantoprazole or an H2-blocker instead"
+   },
+   {
+    "other": "Citalopram",
+    "severity": "moderate",
+    "mechanism": "CYP2C19 inhibition raises citalopram exposure",
+    "effect": "↑ QT-prolongation risk",
+    "management": "Consider dose reduction or pantoprazole instead"
+   }
+  ],
+  "Phenytoin": [
+   {
+    "other": "Warfarin",
+    "severity": "moderate",
+    "mechanism": "Bidirectional CYP2C9 competition",
+    "effect": "Unpredictable INR changes in either direction",
+    "management": "Monitor INR closely on initiation or discontinuation"
+   },
+   {
+    "other": "Fluconazole",
+    "severity": "moderate",
+    "mechanism": "CYP2C9 inhibition raises phenytoin levels",
+    "effect": "↑ phenytoin toxicity risk",
+    "management": "Monitor phenytoin levels; reduce dose if needed"
+   },
+   {
+    "other": "Voriconazole",
+    "severity": "moderate",
+    "mechanism": "Bidirectional CYP2C9/CYP3A4 interaction",
+    "effect": "Altered levels of both drugs",
+    "management": "Monitor levels of both drugs; dose adjustment often needed"
+   }
+  ]
+ }
+}

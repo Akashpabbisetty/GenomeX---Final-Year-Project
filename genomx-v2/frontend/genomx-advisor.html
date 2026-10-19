@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>GenomX Advisor — Pharmacogenomic decision-support prototype</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="wrap">
+  <div class="disclaimer-banner" role="note"><strong>Educational prototype.</strong> Not clinically validated, not a medical device, not for prescribing. Absence of a finding is not evidence of safety. <button type="button" class="link-btn" id="howToBtn">How to use</button></div>
+
+  <header class="hero">
+    <div>
+      <h1 class="hero-title"><span class="dot" aria-hidden="true"></span>GenomX Advisor</h1>
+      <p class="hero-sub">Evidence-traceable pharmacogenomic and medication-context screening. Every finding comes from a numbered rule with a cited source; missing data is reported as missing, never as normal.</p>
+    </div>
+    <div class="hero-actions"><button type="button" class="icon-btn" id="themeToggle">Dark mode</button></div>
+  </header>
+
+  <div id="loadError" class="notice error" role="alert" hidden></div>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button type="button" class="active" data-view="home" role="tab" aria-selected="true" aria-controls="view-home" id="tab-home">Home</button>
+    <button type="button" data-view="dashboard" role="tab" aria-selected="false" aria-controls="view-dashboard" id="tab-dashboard" tabindex="-1">Dashboard</button>
+    <button type="button" data-view="directory" role="tab" aria-selected="false" aria-controls="view-directory" id="tab-directory" tabindex="-1">Drug Directory</button>
+    <button type="button" data-view="graph" role="tab" aria-selected="false" aria-controls="view-graph" id="tab-graph" tabindex="-1">Knowledge Graph</button>
+    <button type="button" data-view="about" role="tab" aria-selected="false" aria-controls="view-about" id="tab-about" tabindex="-1">Methodology</button>
+  </nav>
+
+  <main id="main">
+  <section class="view active print-active" id="view-home" role="tabpanel" aria-labelledby="tab-home">
+    <div class="panel overview-grid">
+      <div>
+        <h2>What this prototype does</h2>
+        <p>GenomX Advisor evaluates a candidate medication against structured patient data using a small, versioned set of rules. Each rule has an ID, a source and a documented action category. Nothing is averaged into a score, and a verified contraindication cannot be diluted by other inputs.</p>
+        <p>Coverage is deliberately limited: only the gene–drug, renal, age and breastfeeding rules listed in the Methodology tab are active. Other medications are reported as <em>not assessed</em>, not as safe.</p>
+        <div class="cta-row"><button type="button" class="icon-btn" id="goDashboard">Go to the dashboard →</button></div>
+      </div>
+      <div>
+        <p class="section-label"><span class="num">i</span>Action categories (same scale everywhere)</p>
+        <div class="severity-key" id="severityKey"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-dashboard" role="tabpanel" aria-labelledby="tab-dashboard" hidden>
+    <div class="dash-grid">
+      <div class="panel"><form id="patientForm" novalidate></form></div>
+      <div>
+        <div class="panel mb16" id="resultsPanel">
+          <div class="toolbar-row">
+            <h2 class="section-label nm" id="resultsHeading" tabindex="-1"><span class="num">6</span>Results</h2>
+            <div class="export-btns"><button type="button" id="exportCsv">Download CSV</button><button type="button" id="exportPrint">Print / save PDF</button></div>
+          </div>
+          <span class="live-badge" id="engineBadge">Deterministic rule engine — no analysis run yet</span>
+          <div id="notices" aria-live="polite"></div>
+          <div class="results-toolbar">
+            <input type="search" class="search-input" id="resultSearch" placeholder="Search medication or class…" aria-label="Search results">
+            <div class="chip-row" id="summaryChips" role="group" aria-label="Filter by action category"></div>
+          </div>
+          <div id="resultList" aria-live="polite"><div class="empty-state">Fill in what is known, then choose “Run analysis”. Unfilled fields are treated as missing, not normal.</div></div>
+        </div>
+        <div class="panel"><div class="toolbar-row"><h2 class="section-label nm"><span class="num">7</span>Review timeline</h2><span class="live-badge" id="liveBadge">Timestamps are real</span></div><div class="timeline" id="timeline"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-directory" role="tabpanel" aria-labelledby="tab-directory" hidden>
+    <div class="panel"><h2 class="section-label"><span class="num">i</span>Drug directory</h2>
+      <input type="search" class="search-input" id="dirSearch" placeholder="Search medicine or class…" aria-label="Search drug directory">
+      <div class="dir-grid" id="dirGrid"></div></div>
+  </section>
+
+  <section class="view" id="view-graph" role="tabpanel" aria-labelledby="tab-graph" hidden>
+    <div class="panel"><h2 class="section-label"><span class="num">8</span>Knowledge graph</h2>
+      <p class="hint">Edges exist only where a rule or finding links an input to a drug. No “inferred” relationships are created. Use Tab to move between nodes and relationships; Enter shows evidence.</p>
+      <div class="graph-controls">
+        <fieldset class="inline"><legend class="sr-only">Graph content</legend>
+          <label><input type="radio" name="graphMode" value="analysis" checked> Current analysis</label>
+          <label><input type="radio" name="graphMode" value="catalog"> Rule catalog</label></fieldset>
+        <fieldset class="inline"><legend class="sr-only">Relationship types</legend>
+          <label><input type="checkbox" class="graph-filter" data-type="confirmed" checked> <span class="key key-confirmed"></span>Confirmed</label>
+          <label><input type="checkbox" class="graph-filter" data-type="unknown" checked> <span class="key key-unknown"></span>Unknown / needs info</label>
+          <label><input type="checkbox" class="graph-filter" data-type="unverified" checked> <span class="key key-unverified"></span>Unverified</label></fieldset>
+        <input type="search" class="search-input graph-search" id="graphSearch" placeholder="Search nodes…" aria-label="Search graph nodes">
+        <div class="zoom-ctrls"><button type="button" id="zoomOut" aria-label="Zoom out">−</button><button type="button" id="zoomReset" aria-label="Reset view">Reset</button><button type="button" id="zoomIn" aria-label="Zoom in">+</button></div>
+      </div>
+      <p class="hint" id="graphCount" aria-live="polite"></p>
+      <div class="graph-layout">
+        <div class="graph-frame"><svg id="kg" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Knowledge graph of inputs, rules and medications; a table version follows"></svg></div>
+        <aside class="graph-detail" id="graphDetail" aria-live="polite"><p class="empty-state">Select a node or relationship to see its evidence.</p></aside>
+      </div>
+      <details class="mt16" open><summary>Table version of the graph (accessible alternative)</summary>
+        <div class="table-scroll"><table id="graphTable" class="mini"><thead><tr><th>From</th><th>Relationship</th><th>To</th><th>Type</th><th>Rule</th><th>Evidence</th></tr></thead><tbody></tbody></table></div></details>
+    </div>
+  </section>
+
+  <section class="view" id="view-about" role="tabpanel" aria-labelledby="tab-about" hidden>
+    <div class="panel"><h2 class="section-label"><span class="num">9</span>Methodology and limits</h2><div id="methodology"></div></div>
+  </section>
+  </main>
+
+  <footer>GenomX Advisor v2 prototype · educational use only · see Methodology for data status and limitations</footer>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" hidden><div class="modal-card" id="modalCard" tabindex="-1"></div></div>
+<div class="modal-overlay" id="tourOverlay" hidden><div class="modal-card" id="tourCard" tabindex="-1"></div></div>
+<div id="printReport" class="print-only" aria-hidden="true"></div>
+<script type="module" src="ui/main.js"></script>
+</body>
+</html>

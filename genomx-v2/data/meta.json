@@ -1,0 +1,9 @@
+{
+ "schema": "meta/1",
+ "ruleSetVersion": "2026.10.0-prototype",
+ "appVersion": "2.0.0-prototype",
+ "builtOn": "2026-10-13",
+ "status": "PROTOTYPE — educational and investigational only. Not clinically validated; not for prescribing.",
+ "evidenceRetrieved": "2026-10-13",
+ "evidenceNote": "Evidence records were read via web search/fetch on the retrieved date. CPIC evidence LEVELS were not retrievable (CPIC's gene-drug table is JavaScript-rendered) and are therefore recorded as null, never assumed."
+}

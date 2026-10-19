@@ -1,0 +1,77 @@
+{
+ "schema": "rules/1",
+ "module": "renal",
+ "rules": [
+  {
+   "version": "1.0.0",
+   "status": "verified",
+   "strength": null,
+   "mechanism": null,
+   "monitoring": [
+    "eGFR at least annually in all patients taking metformin."
+   ],
+   "limitations": [
+    "Single eGFR value; trend, acute kidney injury and measurement method are not assessed."
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited source."
+   },
+   "blocking": true,
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "id": "R-RENAL-METFORMIN-EGFR-LT30",
+   "module": "renal",
+   "drug": "metformin",
+   "condition": {
+    "type": "egfr",
+    "lt": 30
+   },
+   "action": "avoid",
+   "headline": "Metformin is contraindicated when eGFR is below 30 mL/min/1.73 m²",
+   "rationale": "FDA labeling states metformin is contraindicated at eGFR below 30 mL/min/1.73 m²; discontinue if eGFR falls below 30.",
+   "evidence": [
+    "E-FDA-METF-2016"
+   ]
+  },
+  {
+   "version": "1.0.0",
+   "status": "verified",
+   "strength": null,
+   "mechanism": null,
+   "monitoring": [
+    "eGFR at least annually; assess benefit/risk if eGFR falls below 45."
+   ],
+   "limitations": [
+    "Applies to NEW starts. For patients already taking metformin the label advises a benefit–risk assessment."
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited source."
+   },
+   "blocking": true,
+   "requires": {
+    "priorExposure": [
+     "naive"
+    ]
+   },
+   "onUnmetContext": "conditional",
+   "id": "R-RENAL-METFORMIN-EGFR-30-45",
+   "module": "renal",
+   "drug": "metformin",
+   "condition": {
+    "type": "egfr",
+    "gte": 30,
+    "lt": 45
+   },
+   "action": "avoid",
+   "headline": "Starting metformin is not recommended when eGFR is 30–45 mL/min/1.73 m²",
+   "rationale": "FDA labeling states starting metformin at eGFR 30–45 is not recommended; if eGFR falls below 45 in a current patient, benefits and risks of continuing should be assessed.",
+   "evidence": [
+    "E-FDA-METF-2016"
+   ]
+  }
+ ]
+}

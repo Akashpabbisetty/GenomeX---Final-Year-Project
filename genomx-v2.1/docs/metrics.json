@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-10-17T10:54:40.018Z",
+  "ruleSetVersion": "2026.10.0-prototype",
+  "LIMITATION": "Reference cases are derived from the SAME sources used to author the rules, and the sample is small. Agreement shows faithful encoding (regression), NOT independent clinical accuracy. Random patients are synthetic and carry no clinical meaning.",
+  "referenceSet": {
+    "cases": 49,
+    "exactAgreement": 49,
+    "exactAgreementRate": 1,
+    "disagreements": [],
+    "confusion": {
+      "avoid->avoid": 14,
+      "no_flag->no_flag": 10,
+      "conditional->conditional": 7,
+      "needs_info->needs_info": 3,
+      "modify->modify": 15
+    },
+    "avoidDetection": {
+      "tp": 14,
+      "fn": 0,
+      "fp": 0,
+      "tn": 35,
+      "sensitivity": 1,
+      "specificity": 1
+    },
+    "actionableDetection_avoid_or_modify": {
+      "tp": 29,
+      "fn": 0,
+      "fp": 0,
+      "tn": 20,
+      "sensitivity": 1,
+      "specificity": 1
+    }
+  },
+  "coverage": {
+    "drugsInCatalog": 1395,
+    "drugsEvaluatedByDefault": 211,
+    "drugsWithVerifiedRule": 12,
+    "drugsWithAnyRule": 17,
+    "drugsWithPublishedGuideline": 208,
+    "drugsWithGuidelineButNoEncodedRule": 194,
+    "drugsWithLabelData": 1344,
+    "guidelinesBySource": {
+      "DPWG": 110,
+      "CPIC": 78,
+      "ACR": 1,
+      "CPNDS": 6,
+      "RNPGx": 16,
+      "CFF": 1,
+      "SEFF/SEOM": 1,
+      "AusNZ": 1,
+      "AIOM": 2,
+      "AHA": 1
+    },
+    "rulesByStatus": {
+      "verified": 27,
+      "citation_pending": 5
+    },
+    "evidenceRecords": 11
+  },
+  "alertBurdenRealistic": {
+    "0_abnormal_genes": {
+      "meanDrugsFlagged_avoid_modify_conditional": 0,
+      "meanDrugsAvoidOrModify": 0
+    },
+    "1_abnormal_genes": {
+      "meanDrugsFlagged_avoid_modify_conditional": 6.27,
+      "meanDrugsAvoidOrModify": 0.57
+    },
+    "2_abnormal_genes": {
+      "meanDrugsFlagged_avoid_modify_conditional": 13.08,
+      "meanDrugsAvoidOrModify": 1.16
+    },
+    "3_abnormal_genes": {
+      "meanDrugsFlagged_avoid_modify_conditional": 17.83,
+      "meanDrugsAvoidOrModify": 1.7
+    }
+  },
+  "stress": {
+    "note": "UNREALISTIC stress sample: ~50% of genes carry random results.",
+    "randomPatients": 5000,
+    "drugEvaluations": 1055000,
+    "categoryShare": {
+      "avoid": 0.0073,
+      "modify": 0.007,
+      "conditional": 0.1783,
+      "monitor": 0,
+      "needs_info": 0.036,
+      "informational": 0.7519,
+      "no_flag": 0.0195
+    },
+    "meanAlertsPerPatient_avoid_modify_conditional": 40.65,
+    "patientsWithAtLeastOneAvoid": 0.816,
+    "needsInfoShare": 0.036,
+    "noFlagWithBlockingMissing_mustBeZero": 0
+  }
+}

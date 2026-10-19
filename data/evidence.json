@@ -1,0 +1,125 @@
+{
+ "schema": "evidence/1",
+ "evidence": [
+  {
+   "id": "E-CPIC-ABC-2014",
+   "org": "CPIC",
+   "title": "Guidelines for HLA-B genotype and abacavir dosing: 2014 update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3994233",
+   "year": "2014",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC may have published a newer version; check cpicpgx.org."
+  },
+  {
+   "id": "E-CPIC-ALLO-2015",
+   "org": "CPIC",
+   "title": "Guideline for HLA-B genotype and allopurinol dosing: 2015 update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4675696",
+   "year": "2015",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC may have published a newer version."
+  },
+  {
+   "id": "E-CPIC-CBZ-2017",
+   "org": "CPIC",
+   "title": "Guideline for HLA genotype and use of carbamazepine and oxcarbazepine: 2017 update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847474",
+   "year": "2017",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "Addresses HLA-B*15:02 and HLA-A*31:01; only HLA-B*15:02 is modelled here."
+  },
+  {
+   "id": "E-CPIC-OPIOID-2021",
+   "org": "CPIC",
+   "title": "Guideline for CYP2D6, OPRM1 and COMT genotypes and select opioid therapy",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478",
+   "year": "2021",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": null
+  },
+  {
+   "id": "E-FDA-CODEINE-2017",
+   "org": "FDA",
+   "title": "Drug Safety Communication (2017-04-20): restricts codeine and tramadol use in children; recommends against use in breastfeeding mothers",
+   "url": "https://www.medicinesresources.nhs.uk/en/Medicines-Awareness/Safety-Alerts/Safety-alerts/FDA-restricts-use-of-prescription-codeine-pain-and-cough-medicines-and-tramadol-pain-medicines-in-children-recommends-against-use-in-breas-6362838258",
+   "year": "2017",
+   "type": "regulatory",
+   "retrieved": "2026-10-13",
+   "note": "Read via an NHS safety-alert repost of the FDA communication; the original FDA page was not accessed. Verify against the current FDA label."
+  },
+  {
+   "id": "E-CPIC-CLOP-2022",
+   "org": "CPIC",
+   "title": "Guideline for CYP2C19 and clopidogrel therapy: 2022 update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9287492",
+   "year": "2022",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "Recommendations differ by indication."
+  },
+  {
+   "id": "E-CPIC-TPMT-2018",
+   "org": "CPIC",
+   "title": "Guideline for thiopurine dosing based on TPMT and NUDT15 genotypes: 2018 update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6576267",
+   "year": "2019",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC 2018 update published 2019."
+  },
+  {
+   "id": "E-CPIC-STATIN-2022",
+   "org": "CPIC",
+   "title": "Guideline for SLCO1B1, ABCG2 and CYP2C9 genotypes and statin-associated musculoskeletal symptoms",
+   "url": "https://files.cpicpgx.org/data/guideline/publication/statins/2022/publication.pdf",
+   "year": "2022",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "Replaces the 2012/2014 SLCO1B1-simvastatin guidance."
+  },
+  {
+   "id": "E-FDA-METF-2016",
+   "org": "FDA",
+   "title": "Drug Safety Communication (2016-04-08): revised warnings for metformin in reduced kidney function",
+   "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-revises-warnings-regarding-use-diabetes-medicine-metformin-certain",
+   "year": "2016",
+   "type": "regulatory",
+   "retrieved": "2026-10-13",
+   "note": "Issued 2016; stated as incorporated into labeling by 2017. Verify against current label."
+  },
+  {
+   "id": "E-SIDER-4.1",
+   "org": "SIDER 4 (EMBL)",
+   "title": "The SIDER database of drugs and side effects (label-derived adverse effects)",
+   "url": "https://doi.org/10.1093/nar/gkv1075",
+   "year": "2016",
+   "type": "label_database",
+   "retrieved": "2026-10-15",
+   "note": "Label-derived, mid-2010s snapshot; no severity grading; not patient outcome data. Citation DOI as recalled — verify."
+  },
+  {
+   "id": "E-CPIC-DPYD-2017",
+   "org": "CPIC",
+   "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for Dihydropyrimidine Dehydrogenase Genotype and Fluoropyrimidine Dosing: 2017 Update.",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5760397",
+   "year": "2018",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-15",
+   "note": "Publication cited by the ClinPGx annotation (link taken from the dataset); the ANNOTATION text was read, not the article body. Guideline is being updated."
+  },
+  {
+   "id": "E-TGGATES",
+   "org": "Open TG-GATEs",
+   "title": "Open TG-GATEs: a large-scale toxicogenomics database (rat in vivo / in vitro blood chemistry)",
+   "url": "https://doi.org/10.1093/nar/gku955",
+   "year": "2015",
+   "type": "preclinical_database",
+   "retrieved": "2026-10-17",
+   "note": "Preclinical (rat) data at supratherapeutic doses; not human evidence. Citation DOI as recalled — verify."
+  }
+ ]
+}

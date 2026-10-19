@@ -1,0 +1,11 @@
+# Tasks
+- [ ] 1. Download PubChem structures for SIDER CIDs into `data_raw/pubchem/`; ingest script + provenance
+- [ ] 2. `research/kg/build_graph.py` → Parquet node/edge tables + counts
+- [ ] 3. Split module (drug-wise, term-wise, random=optimistic) with unit tests (no train/test drug overlap)
+- [ ] 4. Baselines: popularity, kNN-similarity, logistic regression, matrix factorisation
+- [ ] 5. GNN (one task) + training loop + seeds
+- [ ] 6. Metrics module (AUROC/AUPRC/P@k/ECE) + bootstrap CIs
+- [ ] 7. Ablations (+genes, +structure, +TG-GATEs, graph vs non-graph)
+- [ ] 8. Error analysis (by term frequency, drug class, label sparsity)
+- [ ] 9. Export scores + model card; add "research output" panel hook (see patient-api-integration)
+- [ ] 10. Optional: temporal/external validation with current labels or FAERS disproportionality

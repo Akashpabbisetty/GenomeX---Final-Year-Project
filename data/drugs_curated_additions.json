@@ -1,0 +1,167 @@
+{
+ "schema": "drugs/1",
+ "note": "Pharmaceuticals that appear as Open TG-GATEs compounds but are absent from the guideline/SIDER-derived catalog. Added by hand (curation judgement, flagged 'curated'); they carry no rules, guidelines or label data unless those sources later include them.",
+ "drugs": [
+  {
+   "id": "benzbromarone",
+   "name": "Benzbromarone",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "benziodarone",
+   "name": "Benziodarone",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "bendazac",
+   "name": "Bendazac",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "bucetin",
+   "name": "Bucetin",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "chlormadinone",
+   "name": "Chlormadinone",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "chlormezanone",
+   "name": "Chlormezanone",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "cephalothin",
+   "name": "Cephalothin",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "cyclosporine-a",
+   "name": "Cyclosporine A",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "enalapril",
+   "name": "Enalapril",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "ethinylestradiol",
+   "name": "Ethinylestradiol",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "iproniazid",
+   "name": "Iproniazid",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "nimesulide",
+   "name": "Nimesulide",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "pemoline",
+   "name": "Pemoline",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "phenacetin",
+   "name": "Phenacetin",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "phenylbutazone",
+   "name": "Phenylbutazone",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "sulpiride",
+   "name": "Sulpiride",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "tacrine",
+   "name": "Tacrine",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "ajmaline",
+   "name": "Ajmaline",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "moxisylyte",
+   "name": "Moxisylyte",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "clofibrate",
+   "name": "Clofibrate",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "nicotinic-acid",
+   "name": "Nicotinic acid",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "methapyrilene",
+   "name": "Methapyrilene",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  },
+  {
+   "id": "alpidem",
+   "name": "Alpidem",
+   "class": null,
+   "aliases": [],
+   "curated": "TG-GATEs compound; medicinal product"
+  }
+ ]
+}

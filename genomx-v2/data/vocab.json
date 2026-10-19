@@ -1,0 +1,67 @@
+{
+ "schema": "vocab/1",
+ "indications": [
+  {
+   "id": "unknown",
+   "label": "Not specified"
+  },
+  {
+   "id": "acs_pci",
+   "label": "Acute coronary syndrome / PCI (antiplatelet)"
+  },
+  {
+   "id": "other_antiplatelet",
+   "label": "Other antiplatelet indication"
+  },
+  {
+   "id": "other",
+   "label": "Other / not applicable"
+  }
+ ],
+ "allergyClasses": [
+  {
+   "id": "penicillin",
+   "label": "Penicillin / beta-lactam (penicillin class)"
+  },
+  {
+   "id": "sulfonamide_antibiotic",
+   "label": "Sulfonamide antibiotic"
+  },
+  {
+   "id": "nsaid",
+   "label": "NSAID / aspirin"
+  }
+ ],
+ "allergyStatuses": [
+  {
+   "id": "documented",
+   "label": "Documented allergy"
+  },
+  {
+   "id": "suspected",
+   "label": "Suspected allergy"
+  },
+  {
+   "id": "intolerance",
+   "label": "Intolerance (non-allergic reaction)"
+  },
+  {
+   "id": "unknown",
+   "label": "Unknown reaction"
+  }
+ ],
+ "exposure": [
+  {
+   "id": "unknown",
+   "label": "Unknown"
+  },
+  {
+   "id": "naive",
+   "label": "Never taken"
+  },
+  {
+   "id": "prior",
+   "label": "Has taken before / tolerating"
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "schema": "rules/1",
+ "module": "allergy",
+ "rules": [
+  {
+   "id": "R-ALG-AMOXICILLIN-PENICILLIN",
+   "version": "1.0.0",
+   "status": "citation_pending",
+   "module": "allergy",
+   "drug": "amoxicillin",
+   "condition": {
+    "type": "allergy",
+    "substanceClass": "penicillin",
+    "mode": "same_class"
+   },
+   "requires": {},
+   "onUnmetContext": "skip",
+   "action": "avoid",
+   "strength": null,
+   "headline": "Recorded penicillin-class allergy",
+   "rationale": "The patient has a recorded allergy to the same drug class as this medication.",
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Class-level check only; this is not a guideline recommendation.",
+    "Evidence citation pending: no source has been linked to this rule in this release.",
+    "Reaction type, severity and date determine real-world significance."
+   ],
+   "evidence": [],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative is encoded."
+   },
+   "blocking": false
+  },
+  {
+   "id": "R-ALG-CEPHALEXIN-PENICILLIN",
+   "version": "1.0.0",
+   "status": "citation_pending",
+   "module": "allergy",
+   "drug": "cephalexin",
+   "condition": {
+    "type": "allergy",
+    "substanceClass": "penicillin",
+    "mode": "cross_reactive"
+   },
+   "requires": {},
+   "onUnmetContext": "skip",
+   "action": "conditional",
+   "strength": null,
+   "headline": "Recorded penicillin allergy — possible cross-reactivity (needs review)",
+   "rationale": "A recorded penicillin-class allergy may or may not imply reaction to this related drug; cross-reactivity depends on the original reaction and the drugs' structures, so no blanket conclusion is drawn.",
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Class-level check only; this is not a guideline recommendation.",
+    "Evidence citation pending: no source has been linked to this rule in this release.",
+    "Reaction type, severity and date determine real-world significance."
+   ],
+   "evidence": [],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative is encoded."
+   },
+   "blocking": false
+  },
+  {
+   "id": "R-ALG-TMPSMX-SULFA",
+   "version": "1.0.0",
+   "status": "citation_pending",
+   "module": "allergy",
+   "drug": "trimethoprim-sulfamethoxazole",
+   "condition": {
+    "type": "allergy",
+    "substanceClass": "sulfonamide_antibiotic",
+    "mode": "same_class"
+   },
+   "requires": {},
+   "onUnmetContext": "skip",
+   "action": "avoid",
+   "strength": null,
+   "headline": "Recorded sulfonamide-antibiotic allergy",
+   "rationale": "The patient has a recorded allergy to the same drug class as this medication.",
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Class-level check only; this is not a guideline recommendation.",
+    "Evidence citation pending: no source has been linked to this rule in this release.",
+    "Reaction type, severity and date determine real-world significance."
+   ],
+   "evidence": [],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative is encoded."
+   },
+   "blocking": false
+  },
+  {
+   "id": "R-ALG-IBUPROFEN-NSAID",
+   "version": "1.0.0",
+   "status": "citation_pending",
+   "module": "allergy",
+   "drug": "ibuprofen",
+   "condition": {
+    "type": "allergy",
+    "substanceClass": "nsaid",
+    "mode": "same_class"
+   },
+   "requires": {},
+   "onUnmetContext": "skip",
+   "action": "avoid",
+   "strength": null,
+   "headline": "Recorded NSAID allergy",
+   "rationale": "The patient has a recorded allergy to the same drug class as this medication.",
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Class-level check only; this is not a guideline recommendation.",
+    "Evidence citation pending: no source has been linked to this rule in this release.",
+    "Reaction type, severity and date determine real-world significance."
+   ],
+   "evidence": [],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative is encoded."
+   },
+   "blocking": false
+  },
+  {
+   "id": "R-ALG-ASPIRIN-NSAID",
+   "version": "1.0.0",
+   "status": "citation_pending",
+   "module": "allergy",
+   "drug": "aspirin",
+   "condition": {
+    "type": "allergy",
+    "substanceClass": "nsaid",
+    "mode": "same_class"
+   },
+   "requires": {},
+   "onUnmetContext": "skip",
+   "action": "avoid",
+   "strength": null,
+   "headline": "Recorded NSAID/aspirin allergy",
+   "rationale": "The patient has a recorded allergy to the same drug class as this medication.",
+   "mechanism": null,
+   "monitoring": [],
+   "limitations": [
+    "Class-level check only; this is not a guideline recommendation.",
+    "Evidence citation pending: no source has been linked to this rule in this release.",
+    "Reaction type, severity and date determine real-world significance."
+   ],
+   "evidence": [],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative is encoded."
+   },
+   "blocking": false
+  }
+ ]
+}
