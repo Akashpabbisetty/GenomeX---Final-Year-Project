@@ -111,4 +111,15 @@ export const CASES = [
   { id: 'vori-2c19-pm', source: 'DPWG voriconazole/CYP2C19 (ClinPGx PA166104990)', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
   // --- Irinotecan
   { id: 'iri-ugt1a1-pm', source: 'DPWG irinotecan/UGT1A1 (ClinPGx PA166104951)', drug: 'irinotecan', patient: P({}, { 'UGT1A1': 'poor' }), expected: 'modify' },
+  // --- G6PD drugs (CPIC G6PD 2023; PMC10281211)
+  { id: 'dap-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'dapsone', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'dap-g6pd-nm', source: 'CPIC G6PD 2023 (ClinPGx PA166119846): normal G6PD — no flag', drug: 'dapsone', patient: P({}, { 'G6PD': 'normal' }), expected: 'no_flag' },
+  { id: 'mb-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'methylene-blue', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'peglo-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'pegloticase', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'rasb-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'rasburicase', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'taf-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'tafenoquine', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'tolb-g6pd-def', source: 'CPIC G6PD 2023 (ClinPGx PA166119846)', drug: 'toluidine-blue', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'prim-g6pd-def', source: 'CPIC primaquine/G6PD (ClinPGx PA166279621) + PA166119846', drug: 'primaquine', patient: P({}, { 'G6PD': 'deficient' }), expected: 'avoid' },
+  { id: 'prim-g6pd-var', source: 'CPIC primaquine/G6PD (ClinPGx PA166279621): variable requires specialist review', drug: 'primaquine', patient: P({}, { 'G6PD': 'variable' }), expected: 'conditional' },
+  { id: 'prim-g6pd-nm', source: 'CPIC primaquine/G6PD (ClinPGx PA166279621): normal G6PD — no flag', drug: 'primaquine', patient: P({}, { 'G6PD': 'normal' }), expected: 'no_flag' },
 ];

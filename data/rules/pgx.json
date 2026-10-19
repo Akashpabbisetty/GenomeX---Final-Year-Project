@@ -1688,6 +1688,267 @@
    "blocking": true
   },
   {
+   "id": "R-PGX-DAPSONE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "dapsone",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Dapsone is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends that high-risk drugs — including dapsone — should be avoided in G6PD-deficient patients (with or without chronic non-spherocytic haemolytic anaemia) due to the risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guideline."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-METHYLENE-BLUE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "methylene-blue",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Methylene blue is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding methylene blue in G6PD-deficient patients due to the risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PEGLOTICASE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "pegloticase",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Pegloticase is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding pegloticase in G6PD-deficient patients due to risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-RASBURICASE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "rasburicase",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Rasburicase is contraindicated in G6PD-deficient patients",
+   "rationale": "CPIC recommends that rasburicase — a high-risk drug — should be avoided in G6PD-deficient patients; the FDA labelling also contraindicate rasburicase in G6PD deficiency due to risk of acute haemolytic anaemia and methemoglobinaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TAFENOQUINE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "tafenoquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Tafenoquine is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding tafenoquine in G6PD-deficient patients due to the risk of acute haemolytic anaemia; tafenoquine is a high-risk 8-aminoquinoline drug in G6PD deficiency.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TOLUIDINE-BLUE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "toluidine-blue",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Toluidine blue is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding toluidine blue (tolonium chloride) in G6PD-deficient patients due to risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PRIMAQUINE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "primaquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Primaquine is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends that primaquine should be avoided in G6PD-deficient patients (with or without chronic non-spherocytic haemolytic anaemia). G:PA166279621 is the primaquine-specific CPIC guideline covering G6PD-deficient patients.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166279621"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PRIMAQUINE-G6PD-VARIABLE",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "primaquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "variable"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "conditional",
+   "strength": "strong",
+   "headline": "Primaquine use requires specialist review in G6PD-variable patients",
+   "rationale": "CPIC notes that for patients with G6PD variable phenotype (typically heterozygous females with intermediate activity), the recommendation is to consider prescribing primaquine at a reduced dose with enhanced monitoring; the guideline recommends specialist review rather than automatic avoidance.",
+   "mechanism": "G6PD-variable females have intermediate enzyme activity that may not fully protect against oxidant-induced haemolysis; susceptibility depends on the degree of X-chromosome inactivation.",
+   "monitoring": [
+    "Haemoglobin monitoring before and during treatment if primaquine is used."
+   ],
+   "limitations": [
+    "The CPIC guideline provides a nuanced recommendation for variable patients; specific dosing is in the guideline and is not encoded here."
+   ],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166279621"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
    "id": "R-PGX-IRINOTECAN-UGT1A1-PM",
    "version": "2.0.0",
    "status": "verified",

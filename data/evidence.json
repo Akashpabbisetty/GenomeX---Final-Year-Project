@@ -190,6 +190,16 @@
    "type": "primary_guideline",
    "retrieved": "2026-10-13",
    "note": "CPIC voriconazole/CYP2C19 guideline; alternative agent for UM, dose reduction for PM."
+  },
+  {
+   "id": "E-CPIC-G6PD-2023",
+   "org": "CPIC",
+   "title": "Expanded Clinical Pharmacogenetics Implementation Consortium Guideline for Medication Use in the Context of G6PD Genotype",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10281211",
+   "year": "2023",
+   "type": "primary_guideline",
+   "retrieved": "2026-10-13",
+   "note": "CPIC 2023 G6PD guideline; covers high-risk drugs causing haemolytic anaemia in G6PD-deficient patients including dapsone, methylene blue, pegloticase, rasburicase, tafenoquine, toluidine blue. The earlier 2014 guideline (PMC4111801) covered rasburicase specifically."
   }
  ]
 }
