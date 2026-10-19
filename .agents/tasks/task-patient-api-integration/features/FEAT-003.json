@@ -1,0 +1,30 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Add the research-output panel stub to the frontend. Primary functional file goes in frontend/ui/research-panel.js (required for the app to work). A standalone copy also goes in genomex-final/api/research-panel.js. Both files are identical. Modifies frontend/ui/app.js (one import + one call). Uses only h() from dom.js (no innerHTML), respects strict CSP, adds no npm dependencies.",
+  "status": "completed",
+  "steps": [
+    "STEP 1 — Create frontend/ui/research-panel.js (primary, required for the app). Exports one async function: renderResearchPanel(container). Builds a panel div using h() from './dom.js'. Heading: 'Model-based drug-ADR association (research output — not yet available)'. Attempts HEAD fetch to '../../data/model/assoc_scores.parquet' (same-origin, allowed by CSP connect-src 'self'). If response.ok: show 'Training results file found: data/model/assoc_scores.parquet' and hint 'Use Python + DuckDB to query: import duckdb; duckdb.query(\"SELECT * FROM data/model/assoc_scores.parquet LIMIT 10\").fetchdf()'. If fetch fails or !ok: show 'Training results not yet available. Run research/kg/run_all.py on an ML-capable machine.' Always append: 'Model predictions are research output only — shown separately from rule-based findings and NEVER used to alter any action category.' Always append disclaimer: 'RESEARCH OUTPUT — not clinically validated. Do not use for prescribing decisions.' Append built panel to container and return it. NO innerHTML anywhere. Use h('p', { text: '...' }) not h('p', { innerHTML: '...' }). No inline styles. No inline event handlers.",
+
+    "STEP 2 — Create genomex-final/api/research-panel.js. This is an IDENTICAL COPY of frontend/ui/research-panel.js — same content, same structure. The only difference is the dom.js import path must be adjusted if needed (but since this copy is for distribution/reference, the import can be left as './dom.js' with a comment noting it requires dom.js to be available). Add a file-level comment: '// Copy of frontend/ui/research-panel.js for distribution in genomex-final/api/. The primary functional version is at frontend/ui/research-panel.js.'",
+
+    "STEP 3 — Modify frontend/ui/app.js. Add one import at the top: `import { renderResearchPanel } from './research-panel.js';`. In initApp(ds), after the call to `renderMethodology(ds, $('#methodology'))`, add: `renderResearchPanel($('#view-about'));`. No other changes to app.js. Read app.js before editing to find the exact context."
+  ],
+  "acceptance_criteria": [
+    "frontend/ui/research-panel.js exists and exports renderResearchPanel.",
+    "genomex-final/api/research-panel.js exists (copy).",
+    "Opening frontend/genomx-advisor.html (served via npm run serve) and clicking the Methodology tab shows the research panel below methodology content.",
+    "Panel heading contains 'Model-based drug-ADR association'.",
+    "Panel shows 'Training results not yet available. Run research/kg/run_all.py on an ML-capable machine.' (since data/model/assoc_scores.parquet does not exist yet).",
+    "Panel contains the note that model predictions never alter action categories.",
+    "No innerHTML used anywhere in research-panel.js.",
+    "node --test \"tests/*.test.js\" still passes after this change."
+  ],
+  "verification": [
+    "node --test \"tests/*.test.js\"   # All tests still pass",
+    "# Verify no innerHTML: node -e \"import('node:fs').then(fs=>{const src=fs.readFileSync('frontend/ui/research-panel.js','utf8');if(src.includes('innerHTML'))throw new Error('innerHTML found!');console.log('OK: no innerHTML')})\"",
+    "# Manual: npm run serve, open http://localhost:8000/frontend/genomx-advisor.html, Methodology tab, confirm panel"
+  ],
+  "blocked_reason": null,
+  "findings": "Implemented renderResearchPanel in frontend/ui/research-panel.js and genomex-final/api/research-panel.js. Added import and call in frontend/ui/app.js. All data/engine tests pass. ui.test.js fails with ERR_MODULE_NOT_FOUND for jsdom — pre-existing environment issue (jsdom not installed; npm install blocked by project constraints). No innerHTML used. No engine files modified."
+}
