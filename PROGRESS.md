@@ -25,40 +25,50 @@ GenomX Advisor is an evidence-traceable pharmacogenomic medication-safety screen
 ## Work streams
 
 ### Stream 1 — ML/DL code package (`research/kg/`)
-**Status:** 🔄 IN PROGRESS (automated build running)
-**What it is:** Complete portable ML/DL pipeline — graph build (SIDER + ClinPGx + TG-GATEs), cold-start splits, baselines (popularity, kNN, logistic regression, matrix factorisation), GNN (PyTorch Geometric), metrics (AUROC/AUPRC/ECE/CIs), ablations, error analysis, score export.
-**Deliverables:**
-- `research/kg/` — all ML code
-- `research/kg/requirements.txt` — pinned deps
-- `research/kg/SETUP.md` — step-by-step for ML machine (Windows + Linux, CPU + CUDA)
-- `research/kg/METHODS.md` — methodology for paper
-- `research/kg/PROCESS.md` — run guide
-**YOU do:** Copy `research/kg/` + `data/` to ML machine → follow `SETUP.md` → run `python research/kg/run_all.py` → get results back.
-**Blocks:** research output panel in patient-api (needs `data/model/assoc_scores.parquet` from training)
+**Status:** ✅ COMPLETE — reviewed (APPROVED) and finalized. Portable copy in `genomex-final/ml-package/kg/`.
+**What was built** (all verified on Python 3.13, no torch/RDKit):
+- `build_graph.py` — builds KG from SIDER + ClinPGx + TG-GATEs → 7 Parquet tables (1,344 drugs, 4,251 terms, 140,677 drug-ADR edges, 41 genes, 481 drug-gene edges)
+- `splits.py` — drug-wise cold-start + term-wise + random (optimistic) splits; zero-leakage verified by pytest
+- `baselines.py` — popularity prior, kNN (gene-set Jaccard / Tanimoto-ready), logistic regression, matrix factorisation
+- `gnn.py` — heterogeneous PyG GNN; lazy torch import (clean import without torch; clear install error when training attempted)
+- `metrics.py` — AUROC, AUPRC, precision@k, ECE calibration, bootstrap CIs over held-out drugs
+- `ablations.py` — ablation matrix (+genes, +structure, +TG-GATEs, graph vs non-graph); skips torch/RDKit gracefully
+- `error_analysis.py` — breakdown by term frequency, drug class, label sparsity
+- `export.py` — writes `data/model/assoc_scores.parquet` + `MODEL_CARD.md`
+- `run_all.py` — one command, runs everything, prints CAPABILITY BANNER for missing deps
+- `requirements.txt`, `METHODS.md`, `PROCESS.md`, `SETUP.md`, `README.md`, `MODEL_CARD.md`
+**Portable copy:** `genomex-final/ml-package/kg/` — 14 source files + 7 test files
+**YOU do:** Copy `genomex-final/ml-package/kg/` + `data/` to ML machine → follow `SETUP.md` → run `python run_all.py` → copy back `data/model/assoc_scores.parquet` + `figures/`
 
 ---
 
 ### Stream 2 — Rule coverage (`rule-coverage` spec)
-**Status:** 🔄 IN PROGRESS (automated build running)
-**What it is:** Encoding more published CPIC/ClinPGx guidelines into hand-cited rules in the engine.
-**Priority drugs/genes:** CYP2D6 + CYP2C19 antidepressants, tacrolimus/CYP3A5, warfarin (CYP2C9/VKORC1/CYP4F2), tamoxifen, PPIs, voriconazole, irinotecan (UGT1A1), G6PD drugs.
-**Each rule added:** cites the guideline annotation ID, has a reference test case.
-**Deliverables:**
-- New/updated rule files in `data/rules/`
-- New reference cases in `tests/fixtures/reference_cases.js`
-- `npm test` still green after additions
+**Status:** ✅ COMPLETE (213/213 tests pass, APPROVED by reviewer)
+**What was added:** 38 new cited PGx rules, 8 evidence records, 47 new reference test cases.
+**Rules by drug group:**
+- CYP2D6 TCAs: amitriptyline, nortriptyline, clomipramine, desipramine, imipramine (13 rules)
+- CYP2C19 SSRIs: citalopram, escitalopram, sertraline (6 rules)
+- Tacrolimus/CYP3A5 (3 rules)
+- Warfarin/CYP2C9+VKORC1+CYP4F2
+- Tamoxifen/CYP2D6
+- PPIs: omeprazole + lansoprazole / CYP2C19
+- Voriconazole/CYP2C19 — PM rule corrected to CPIC primary recommendation (alternative antifungal; DPWG dose-reduction as secondary)
+- Irinotecan/UGT1A1
+- G6PD drugs: dapsone, methylene blue, pegloticase, rasburicase, tafenoquine, toluidine blue, primaquine (8 rules)
+**Documentation:** `docs/RULE_COVERAGE_ADDITIONS.md` + `genomex-final/rule-coverage/RULE_COVERAGE_ADDITIONS.md`
 
 ---
 
 ### Stream 3 — Patient API integration (`patient-api-integration` spec)
-**Status:** 🔄 IN PROGRESS (automated build running)
-**What it is:** End-to-end working system — server-side API + batch CLI + synthetic demo.
-**Deliverables:**
-- `/api/evaluate` HTTP endpoint (validates patient JSON, runs the same engine, returns findings + evidence + ruleSetVersion, no numeric score, includes disclaimer)
-- Batch CLI: feed a CSV/Parquet of patients, get results out
-- Synthetic cohort demo (clearly labelled synthetic, exercises all code paths)
-- Research output panel stub (placeholder; wired after ML training produces scores)
-**NOT included yet:** auth/audit logging (flagged as required before real patient data; skeleton with clear TODO)
+**Status:** ✅ COMPLETE (213/213 tests pass, APPROVED by reviewer)
+**What was built:**
+- `server/index.js` + `server/evaluate.js` — `/api/evaluate` POST endpoint; validates patient JSON, runs the deterministic engine, returns findings + evidence + ruleSetVersion; NO numeric score; includes disclaimer + data attributions
+- `server/auth.js` — auth skeleton with explicit TODO/SECURITY comment (real patient data must not be used until security/ethics review)
+- `server/audit.js` — audit log stub (ts + patientId + ruleSetVersion, no PHI)
+- `genomex-final/api/batch_evaluate.js` — batch CLI (NDJSON/CSV in → results out, reports throughput)
+- `genomex-final/api/synthetic_demo.js` — synthetic patient demo, all 6 categories exercised, SYNTHETIC banner
+- `frontend/ui/research-panel.js` + `genomex-final/api/research-panel.js` — research output panel stub (shows "Training results not yet available. Run research/kg/run_all.py on an ML-capable machine." until assoc_scores.parquet exists)
+**Reviewer notes (non-blocking for prototype):** CORS wildcard, non-timing-safe auth stub, no body-size cap — document these before any real deployment.
 
 ---
 
@@ -73,10 +83,21 @@ GenomX Advisor is an evidence-traceable pharmacogenomic medication-safety screen
 
 ## What you do (your action items, in order)
 
-1. **Now:** Let streams 1–3 complete (automated). Come back to this file.
-2. **When stream 1 is done:** Copy `research/kg/` + `data/` folders to your ML machine. Follow `research/kg/SETUP.md` exactly. Run `python research/kg/run_all.py`. Copy back the `paper/figures/` folder and `data/model/assoc_scores.parquet`.
-3. **After training:** Tell me "training done, here are the results" and I'll wire the research panel and complete the paper.
-4. **Ongoing:** Verify every citation in the paper before submitting. The literature matrix in `docs/HANDOFF.md` §2 flags several ChatGPT-sourced citations that need manual verification.
+1. **Now — take the ML package to your training machine:**
+   - Copy `genomex-final/ml-package/kg/` to your ML machine
+   - Copy the project's `data/` folder alongside it
+   - Open `SETUP.md` in that folder and follow it step by step
+   - Run: `python run_all.py`
+   - Copy back `data/model/assoc_scores.parquet` and the `figures/` folder when done
+
+2. **After training — come back here and tell me "training done":**
+   - I'll wire the research output panel (it currently shows "not yet available")
+   - I'll scaffold the research paper with your real result numbers
+
+3. **Ongoing — verify your citations manually:**
+   - Several refs in your methodology doc came from a previous AI session and are unverified
+   - Open every cited paper, confirm it exists and says what you claim
+   - See `docs/HANDOFF.md` §2 for the full warning
 
 ---
 
