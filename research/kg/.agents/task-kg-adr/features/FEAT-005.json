@@ -2,7 +2,7 @@
   "id": "FEAT-005",
   "type": "chore",
   "description": "Mirror the finished, verified research/kg/ package into the user's portable output location genomex-final/ml-package/kg/ (and genomex-final/ml-package/kg/tests/). The user routed an instruction that this is the PRIMARY folder they will copy to their ML machine. research/kg/ remains the canonical build location (the spec, venv, review gate and all verification are anchored there); this feature ADDS a copy so nothing is relocated or broken. Must run LAST so it mirrors the final state. Only source files are mirrored, NOT the venv or generated artifacts/figures.",
-  "status": "pending",
+  "status": "completed",
   "steps": [
     "Read research/kg/.agents/plan.md and context.json FIRST. Confirm research/kg/ already contains the completed modules, tests, requirements.txt, and docs from FEAT-001..004 (do not regenerate them).",
     "Copy the standalone ML source files from research/kg/ to genomex-final/ml-package/kg/ (the folder already exists): build_graph.py, splits.py, baselines.py, metrics.py, gnn.py, ablations.py, error_analysis.py, export.py, run_all.py, requirements.txt, README.md, METHODS.md, PROCESS.md, MODEL_CARD.md. Copy research/kg/tests/*.py to genomex-final/ml-package/kg/tests/.",
@@ -19,5 +19,5 @@
     "research/kg/.venv/Scripts/python.exe -c \"import os; base='genomex-final/ml-package/kg'; req=['build_graph.py','splits.py','baselines.py','metrics.py','gnn.py','ablations.py','error_analysis.py','export.py','run_all.py','requirements.txt','README.md','METHODS.md','PROCESS.md','MODEL_CARD.md','SETUP.md']; miss=[f for f in req if not os.path.getsize(os.path.join(base,f))>0]; assert not miss, miss; assert os.path.isdir(os.path.join(base,'tests')); assert not os.path.exists(os.path.join(base,'.venv')); print('mirror OK')\""
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Mirrored the verified research/kg/ package into genomex-final/ml-package/kg/. Copied all 14 standalone source files (build_graph.py, splits.py, baselines.py, metrics.py, gnn.py, ablations.py, error_analysis.py, export.py, run_all.py, requirements.txt, README.md, METHODS.md, PROCESS.md, MODEL_CARD.md) and the 7 test files (test_ablations.py, test_baselines.py, test_error_analysis.py, test_export.py, test_gnn_import.py, test_metrics.py, test_splits.py) into genomex-final/ml-package/kg/tests/. Added SETUP.md with the same run guide as PROCESS.md plus a portable-copy note. Added a portable-location note to the mirror README.md: script paths are relative to the GenomeX project root, generated .venv/artifacts/figures are not shipped, and the data/ folder must be reachable (run from project root or set GENOMEX_DATA_DIR). Confirmed NO .venv/, artifacts/, figures/, or .agents/ were copied and only the tests/ subdir exists. research/kg/ left unchanged. Verification (research/kg/.venv/Scripts/python.exe mirror check, run from project root) printed 'mirror OK' (exit 0)."
 }
