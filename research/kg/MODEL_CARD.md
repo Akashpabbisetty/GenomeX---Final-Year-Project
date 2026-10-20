@@ -1,6 +1,6 @@
 # Model Card -- drug->ADR association prediction (research only)
 
-Generated: 2026-10-20T04:56:22.033808+00:00
+Generated: 2026-10-20T06:11:16.902139+00:00
 
 ## Summary
 
@@ -67,8 +67,8 @@ Attribution strings and SHA-256 digests of every input are recorded in
 
 - AUROC (drug-wise cold-start, matrix factorisation): 0.8074 (95% CI 0.7888-0.8248; 269 held-out drugs; PU, optimistic)
 - model_version: matrix_factorisation_v1
-- model_hash: e6e6dd0c92704c458d43bdfacb1d2d141d1726d8523e8c36210f7ce1c797cc3d
-- kg_graph_hash: 0a00d8241dada102
+- model_hash: 812c795697fbaa70548fd2d4d2efd457931785eda215ae94d11b16423a307ef7
+- kg_graph_hash: 9a9a9fe8f55420f5
 
 ## Provenance
 

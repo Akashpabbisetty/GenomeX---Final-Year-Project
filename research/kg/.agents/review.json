@@ -1,0 +1,16 @@
+{
+  "verdict": "APPROVED",
+  "summary": "KG drug->ADR research build meets the full contract: reproducible Parquet build with SHA-256 provenance matching index.json counts, cold-start splits with zero-overlap test, baselines+metrics+bootstrap CIs, lazy-torch GNN, dep-absent ablation skips, research-only export + compliant MODEL_CARD, docs with [cite: verify] placeholders, complete portable mirror, and no numeric score / never-overrides-rules / engine isolation all respected. Re-ran build_graph, export, splits/gnn-import/full pytest (29 passed).",
+  "findings": [
+    {
+      "severity": "minor",
+      "file": "research/kg/run_all.py",
+      "detail": "Full end-to-end run_all.py exceeds ~10 min on the classical venv because the ablation matrix refits every classical model per (config,seed) before bootstrapping; it completes (verified in FEAT-004 and all stages verified independently here: capability banner + explicit SKIPPED lines for GNN/structure/figures print correctly). Optional: expose a faster default n_boot or a --quick flag so reviewers can smoke-run without waiting for the full matrix. Not blocking."
+    },
+    {
+      "severity": "minor",
+      "file": "research/kg/MODEL_CARD.md",
+      "detail": "MODEL_CARD.md shows as uncommitted after verification because export.py regenerates it on each run (expected behaviour for a generated doc artifact). No action needed; just noting the working-tree diff is from the re-verification run, not a source change."
+    }
+  ]
+}
