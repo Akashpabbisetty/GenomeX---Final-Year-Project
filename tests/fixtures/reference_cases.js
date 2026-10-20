@@ -108,7 +108,7 @@ export const CASES = [
   { id: 'lans-2c19-um', source: 'CPIC PPI 2021 (ClinPGx PA166219103) + DPWG (PA166104987)', drug: 'lansoprazole', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
   // --- Voriconazole
   { id: 'vori-2c19-um', source: 'CPIC voriconazole (ClinPGx PA166161537) + DPWG (PA166104990) + AusNZ (PA166257241)', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'ultrarapid' }), expected: 'modify' },
-  { id: 'vori-2c19-pm', source: 'DPWG voriconazole/CYP2C19 (ClinPGx PA166104990)', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
+  { id: 'vori-2c19-pm', source: 'CPIC voriconazole (ClinPGx PA166161537): alternative antifungal for adult PM; DPWG (PA166104990): 50% dose as secondary path', drug: 'voriconazole', patient: P({}, { 'CYP2C19': 'poor' }), expected: 'modify' },
   // --- Irinotecan
   { id: 'iri-ugt1a1-pm', source: 'DPWG irinotecan/UGT1A1 (ClinPGx PA166104951)', drug: 'irinotecan', patient: P({}, { 'UGT1A1': 'poor' }), expected: 'modify' },
   // --- G6PD drugs (CPIC G6PD 2023; PMC10281211)

@@ -147,7 +147,7 @@ Multi-gene dosing: CYP2C9, VKORC1, and CYP4F2. Full pharmacogenomics-guided dose
 | R-PGX-VORICONAZOLE-CYP2C19-UM | CYP2C19 | ultrarapid, rapid | modify | E-CPIC-VORI-2017, G:PA166161537, G:PA166104990, G:PA166257241 |
 | R-PGX-VORICONAZOLE-CYP2C19-PM | CYP2C19 | poor | modify | E-CPIC-VORI-2017, G:PA166161537, G:PA166104990 |
 
-**Known issue (R-PGX-VORICONAZOLE-CYP2C19-PM):** The PM rule cites `G:PA166161537` (CPIC) and `E-CPIC-VORI-2017` but implements DPWG's 50% dose-reduction recommendation. The CPIC annotation for adult CYP2C19 PM patients recommends selecting an alternative agent, which is the same recommendation encoded in the UM rule. A correction is pending user decision (see Known Gaps section).
+**CPIC primary recommendation for PM:** Select an alternative antifungal not dependent on CYP2C19; DPWG's 50% dose-reduction is encoded as a secondary path. Both guidelines are cited in the evidence array.
 
 #### Irinotecan (drug: `irinotecan`)
 
@@ -194,9 +194,9 @@ CYP2C19 poor metabolizer and intermediate metabolizer rules are not encoded for 
 
 The irinotecan rule covers only UGT1A1 poor metabolizers (`*28/*28`). Dose adjustment guidance for UGT1A1 intermediate metabolizers (`*28/*1`) varies across guidelines (DPWG G:PA166104951, RNPGx G:PA166127626) and was not encoded in this version.
 
-### Voriconazole PM vs CPIC Recommendation
+### Voriconazole PM vs CPIC Recommendation — Resolved
 
-`R-PGX-VORICONAZOLE-CYP2C19-PM` cites the CPIC voriconazole annotation (`G:PA166161537`, `E-CPIC-VORI-2017`) but implements DPWG's 50% dose-reduction recommendation. The CPIC annotation recommends selecting an alternative antifungal agent for adult CYP2C19 poor metabolizers — the same recommendation as the UM rule. A correction is pending user decision on whether to (a) align the PM rule with CPIC's alternative-agent recommendation, or (b) remove the CPIC citations from the PM rule and cite DPWG only.
+`R-PGX-VORICONAZOLE-CYP2C19-PM` has been updated (version 2.1.0) to reflect CPIC's primary recommendation: select an alternative antifungal agent not dependent on CYP2C19 for adult poor metabolizers. DPWG's 50% dose-reduction is noted as a secondary path in the rationale and alternatives text. Both `G:PA166161537` (CPIC) and `G:PA166104990` (DPWG) remain in the evidence array.
 
 ### Clomipramine CYP2C19 UM — Indication-Dependent Avoidance
 

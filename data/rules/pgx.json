@@ -1662,7 +1662,7 @@
   },
   {
    "id": "R-PGX-VORICONAZOLE-CYP2C19-PM",
-   "version": "2.0.0",
+   "version": "2.1.0",
    "status": "verified",
    "module": "pgx",
    "drug": "voriconazole",
@@ -1674,16 +1674,17 @@
    "requires": {},
    "onUnmetContext": "conditional",
    "action": "modify",
-   "headline": "Voriconazole dose reduction recommended for CYP2C19 poor metabolizers",
-   "rationale": "DPWG recommends that CYP2C19 poor metabolizers receive 50% of the standard dose of voriconazole; CPIC notes elevated exposure in PM patients.",
+   "headline": "Alternative antifungal recommended for CYP2C19 poor metabolizers; dose reduction is a secondary option",
+   "rationale": "CPIC recommends selecting an alternative antifungal agent not dependent on CYP2C19 metabolism for adults who are CYP2C19 poor metabolizers (markedly elevated voriconazole exposure raises toxicity risk). DPWG recommends 50% of the standard dose as an alternative path when a substitute agent cannot be used.",
    "mechanism": "Markedly reduced CYP2C19 activity causes voriconazole accumulation, raising toxicity risk (visual disturbances, hepatotoxicity).",
-   "monitoring": ["TDM is strongly recommended. Target trough concentration per institutional protocol."],
+   "monitoring": ["TDM is strongly recommended regardless of the approach taken. Target trough concentration per institutional protocol."],
    "limitations": [],
    "evidence": ["E-CPIC-VORI-2017", "G:PA166161537", "G:PA166104990"],
    "evidenceLevel": null,
    "alternatives": {
-    "supported": false,
-    "text": "No specific alternative is encoded; see the cited guidelines."
+    "supported": true,
+    "text": "An alternative antifungal not dependent on CYP2C19 (CPIC primary recommendation); specific agents not encoded. DPWG recommends 50% of the standard dose if an alternative agent cannot be used.",
+    "evidence": ["G:PA166161537"]
    },
    "blocking": true
   },
