@@ -1,0 +1,7 @@
+{
+  "task_id": "task-patient-api-integration",
+  "task_description": "Build the four deliverables for the patient-api-integration spec: (1) POST /api/evaluate HTTP endpoint wrapping the deterministic JS engine; (2) batch CLI; (3) synthetic cohort demo; (4) frontend research-output panel stub. Also fix the pre-existing Windows path bug in tests/helpers.js that makes all tests fail.",
+  "status": "pending",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}

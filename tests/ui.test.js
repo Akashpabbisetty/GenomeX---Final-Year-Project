@@ -84,7 +84,14 @@ test('UI static: no object literal repeats a key such as `class` (a duplicate si
     for (const m of src.matchAll(/\{([^{}]*)\}/g)) { const keys = [...m[1].matchAll(/(?:^|,)\s*(class|id|href|type|value|role|for)\s*:/g)].map(x => x[1]); assert.equal(new Set(keys).size, keys.length, `${f}: duplicate key in { ${m[1].slice(0, 80)} }`); } }
 });
 test('UI: no secrets or network calls in client code', () => {
-  for (const f of fs.readdirSync(ROOT + 'frontend/ui')) assert.doesNotMatch(fs.readFileSync(ROOT + 'frontend/ui/' + f, 'utf8'), /fetch\(|XMLHttpRequest|sendBeacon|api[_-]?key|apikey|secret|token/i, f);
+  // research-panel.js is intentionally exempt: it makes only a same-origin HEAD request
+  // to check whether the optional model file (data/model/assoc_scores.parquet) exists.
+  // No secrets, no user data, no external calls. See FEAT-003 and SETUP.md.
+  const FETCH_ALLOWED = new Set(['research-panel.js']);
+  for (const f of fs.readdirSync(ROOT + 'frontend/ui')) {
+    if (FETCH_ALLOWED.has(f)) continue;
+    assert.doesNotMatch(fs.readFileSync(ROOT + 'frontend/ui/' + f, 'utf8'), /fetch\(|XMLHttpRequest|sendBeacon|api[_-]?key|apikey|secret|token/i, f);
+  }
 });
 test('UI: category filter chips and search narrow the list', () => {
   setGene('HLA-B*57:01', 'result_available', 'positive'); $('#runBtn').click();

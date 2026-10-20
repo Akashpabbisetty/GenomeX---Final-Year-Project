@@ -892,6 +892,1089 @@
     "text": "No specific alternative is encoded; see the cited guidelines."
    },
    "blocking": true
+  },
+  {
+   "id": "R-PGX-AMITRIPTYLINE-CYP2D6-UMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "amitriptyline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["ultrarapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2D6 ultrarapid/poor metabolizers taking amitriptyline",
+   "rationale": "CPIC recommends an alternative drug for CYP2D6 ultrarapid or poor metabolizers (altered amitriptyline/nortriptyline ratio); DPWG recommends decreasing the dose.",
+   "mechanism": "CYP2D6 converts amitriptyline to nortriptyline; UM increases nortriptyline exposure, PM reduces it, altering efficacy and toxicity risk.",
+   "monitoring": ["Plasma concentration monitoring of amitriptyline and nortriptyline if drug is continued (per guideline)."],
+   "limitations": ["CPIC recommends a specific alternative; DPWG allows dose reduction. No dose is calculated here."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105006", "G:PA166104982"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166105006"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-AMITRIPTYLINE-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "amitriptyline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction of amitriptyline advised for CYP2D6 intermediate metabolizers",
+   "rationale": "DPWG recommends decreasing the dose for CYP2D6 intermediate metabolizers of amitriptyline; CPIC similarly recommends considering a dose adjustment.",
+   "mechanism": "Partial CYP2D6 activity raises nortriptyline accumulation moderately.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105006", "G:PA166104982"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-AMITRIPTYLINE-CYP2C19-UMRPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "amitriptyline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2C19 ultrarapid/rapid/poor metabolizers taking amitriptyline",
+   "rationale": "CPIC recommends an alternative drug for CYP2C19 ultrarapid, rapid, and poor metabolizers because CYP2C19 also metabolizes amitriptyline; note that DPWG has no specific dose recommendation for amitriptyline based on CYP2C19 genotype alone (G:PA166184526).",
+   "mechanism": "CYP2C19 contributes to amitriptyline demethylation; altered activity affects parent drug and active metabolite balance.",
+   "monitoring": [],
+   "limitations": ["DPWG does not recommend a CYP2C19-specific dose change for amitriptyline (PA166184526). Encoded from CPIC only."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105006"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166105006"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-NORTRIPTYLINE-CYP2D6-UMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "nortriptyline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["ultrarapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2D6 ultrarapid/poor metabolizers taking nortriptyline",
+   "rationale": "CPIC recommends an alternative drug for CYP2D6 ultrarapid or poor metabolizers of nortriptyline; DPWG recommends dose adjustment.",
+   "mechanism": "CYP2D6 is the primary enzyme for nortriptyline hydroxylation; altered activity changes plasma levels and toxicity risk.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166104998", "G:PA166104961"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166104998"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-NORTRIPTYLINE-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "nortriptyline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "25% dose reduction of nortriptyline advised for CYP2D6 intermediate metabolizers",
+   "rationale": "DPWG recommends a dose reduction for CYP2D6 intermediate metabolizers of nortriptyline; CPIC similarly recommends considering a dose adjustment.",
+   "mechanism": "Partial CYP2D6 activity moderately raises nortriptyline plasma levels.",
+   "monitoring": [],
+   "limitations": ["No dose is calculated here."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166104998", "G:PA166104961"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-CLOMIPRAMINE-CYP2D6-UMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "clomipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["ultrarapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2D6 ultrarapid/poor metabolizers taking clomipramine",
+   "rationale": "CPIC recommends an alternative drug for CYP2D6 ultrarapid or poor metabolizers of clomipramine; DPWG recommends dose adjustment.",
+   "mechanism": "CYP2D6 is involved in clomipramine metabolism; altered activity affects parent drug and active metabolite desmethylclomipramine.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105007", "G:PA166104964"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166105007"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-CLOMIPRAMINE-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "clomipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose adjustment of clomipramine advised for CYP2D6 intermediate metabolizers",
+   "rationale": "CPIC and DPWG recommend dose adjustment for CYP2D6 intermediate metabolizers of clomipramine.",
+   "mechanism": "Partial CYP2D6 activity moderately alters clomipramine and desmethylclomipramine levels.",
+   "monitoring": [],
+   "limitations": ["No dose is calculated here."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105007", "G:PA166104964"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-CLOMIPRAMINE-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "clomipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative or dose adjustment advised for CYP2C19 ultrarapid metabolizers taking clomipramine",
+   "rationale": "DPWG recommends avoiding clomipramine in CYP2C19 ultrarapid metabolizers for OCD and depression indications; CPIC recommends applying the amitriptyline/nortriptyline guideline (alternative TCA for UM).",
+   "mechanism": "CYP2C19 demethylates clomipramine; ultrarapid activity reduces parent drug and active metabolite exposure.",
+   "monitoring": [],
+   "limitations": ["DPWG recommends avoidance specifically for OCD/depression indications; the indication cannot be confirmed from available inputs so this is encoded as modify, not avoid."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105007", "G:PA166184528"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (DPWG/CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166184528"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-DESIPRAMINE-CYP2D6-UMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "desipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["ultrarapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2D6 ultrarapid/poor metabolizers taking desipramine",
+   "rationale": "CPIC recommends an alternative drug for CYP2D6 ultrarapid or poor metabolizers of desipramine.",
+   "mechanism": "CYP2D6 is the primary enzyme for desipramine hydroxylation; altered activity markedly changes plasma exposure.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105002"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166105002"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-DESIPRAMINE-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "desipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose adjustment of desipramine advised for CYP2D6 intermediate metabolizers",
+   "rationale": "CPIC recommends dose adjustment for CYP2D6 intermediate metabolizers of desipramine.",
+   "mechanism": "Partial CYP2D6 activity moderately raises desipramine plasma levels.",
+   "monitoring": [],
+   "limitations": ["No dose is calculated here."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166105002"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-IMIPRAMINE-CYP2D6-UMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "imipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["ultrarapid", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative TCA or dose adjustment recommended for CYP2D6 ultrarapid/poor metabolizers taking imipramine",
+   "rationale": "DPWG recommends CYP2D6 poor metabolizers receive 30% of the standard dose; ultrarapid metabolizers need dose adjustment; CPIC recommends applying the amitriptyline guideline (alternative drug for UM/PM).",
+   "mechanism": "CYP2D6 converts imipramine to desipramine; altered activity changes active metabolite exposure.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166104999", "G:PA166104972"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative TCA (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166104999"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-IMIPRAMINE-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "imipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction of imipramine advised for CYP2D6 intermediate metabolizers",
+   "rationale": "DPWG recommends 70% of the standard dose for CYP2D6 intermediate metabolizers of imipramine.",
+   "mechanism": "Partial CYP2D6 activity moderately raises imipramine and desipramine exposure.",
+   "monitoring": [],
+   "limitations": ["The 70% figure is the guideline's statement; no dose is calculated here."],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166104999", "G:PA166104972"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-IMIPRAMINE-CYP2C19-PM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "imipramine",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction of imipramine advised for CYP2C19 poor metabolizers",
+   "rationale": "DPWG recommends that CYP2C19 poor metabolizers receive 70% of the standard dose of imipramine, or that imipramine be avoided in these patients.",
+   "mechanism": "CYP2C19 demethylates imipramine; poor metabolism raises parent drug exposure.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TCA-2017", "G:PA166104999", "G:PA166104954"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Avoidance of imipramine is an option per DPWG; alternative TCA not specified.",
+    "evidence": ["G:PA166104954"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-CITALOPRAM-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "citalopram",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose adjustment recommended for CYP2C19 ultrarapid/rapid metabolizers taking citalopram",
+   "rationale": "CPIC recommends a clinically appropriate dose modification for CYP2C19 ultrarapid and rapid metabolizers (reduced efficacy at standard doses); DPWG provides similar guidance.",
+   "mechanism": "CYP2C19 is the primary enzyme for citalopram metabolism; increased activity lowers plasma concentrations and reduces efficacy.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127638", "G:PA166104977"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-CITALOPRAM-CYP2C19-IMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "citalopram",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["intermediate", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction recommended for CYP2C19 intermediate/poor metabolizers taking citalopram",
+   "rationale": "DPWG recommends not exceeding the in-house maximum dose for CYP2C19 intermediate and poor metabolizers of citalopram (accumulation risk); CPIC similarly advises dose adjustment.",
+   "mechanism": "Reduced CYP2C19 activity raises citalopram plasma concentrations, increasing QTc-prolongation and adverse effect risk.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127638", "G:PA166104977"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-ESCITALOPRAM-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "escitalopram",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose adjustment recommended for CYP2C19 ultrarapid/rapid metabolizers taking escitalopram",
+   "rationale": "CPIC recommends a clinically appropriate dose modification for CYP2C19 ultrarapid and rapid metabolizers of escitalopram (reduced efficacy at standard doses); DPWG provides similar guidance.",
+   "mechanism": "CYP2C19 is the primary enzyme for escitalopram metabolism; increased activity lowers plasma concentrations.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127638", "G:PA166104975"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-ESCITALOPRAM-CYP2C19-IMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "escitalopram",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["intermediate", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction recommended for CYP2C19 intermediate/poor metabolizers taking escitalopram",
+   "rationale": "DPWG recommends not exceeding the in-house maximum dose for CYP2C19 IM and PM patients taking escitalopram; CPIC advises dose adjustment.",
+   "mechanism": "Reduced CYP2C19 activity raises escitalopram plasma concentrations, increasing adverse effect risk.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127638", "G:PA166104975"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-SERTRALINE-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "sertraline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose adjustment recommended for CYP2C19 ultrarapid/rapid metabolizers taking sertraline",
+   "rationale": "CPIC recommends considering a 50% reduction of the recommended starting dose for CYP2C19 ultrarapid/rapid metabolizers (sertraline is partly metabolised by CYP2C19; reduced efficacy at standard doses).",
+   "mechanism": "CYP2C19 contributes to sertraline demethylation; increased activity lowers plasma concentrations.",
+   "monitoring": [],
+   "limitations": ["The 50% figure is CPIC's recommendation; no dose is calculated here."],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127639", "G:PA166104980"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-SERTRALINE-CYP2C19-PM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "sertraline",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Dose reduction recommended for CYP2C19 poor metabolizers taking sertraline",
+   "rationale": "DPWG recommends not exceeding 75 mg/day for CYP2C19 poor metabolizer genotypes; CPIC recommends a 50% starting dose reduction.",
+   "mechanism": "Reduced CYP2C19 activity raises sertraline plasma concentrations.",
+   "monitoring": [],
+   "limitations": ["TODO: Verify whether the 75 mg/day limit applies to IM as well; only PM is encoded in this version per the available DPWG summary."],
+   "evidence": ["E-CPIC-SSRI-2023", "G:PA166127639", "G:PA166104980"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TACROLIMUS-CYP3A5-EXPRESSER",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "tacrolimus",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP3A5",
+    "phenotypeIn": ["normal", "intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Increased tacrolimus starting dose recommended for CYP3A5 expressors (normal/intermediate metabolizers)",
+   "rationale": "CPIC recommends increasing the starting dose by 1.5 to 2 times the recommended starting dose for CYP3A5 expressors (CYP3A5*1 carriers); DPWG and RNPGx make the same recommendation. Dose must be individualised by TDM.",
+   "mechanism": "CYP3A5 (*1 allele) metabolises tacrolimus extensively in the gut and liver; expressors have lower tacrolimus exposure at standard doses.",
+   "monitoring": ["Therapeutic drug monitoring (TDM) is mandatory for tacrolimus; adjust dose to target trough concentrations per transplant protocol."],
+   "limitations": ["The fold-increase depends on transplant organ and protocol. No dose is calculated here. Liver transplant recipients require special consideration (donor CYP3A5 genotype matters for hepatic clearance)."],
+   "evidence": ["E-CPIC-TACROLIMUS-2015", "G:PA166124619", "G:PA166104983", "G:PA166202481"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No alternative immunosuppressant is encoded; see the cited guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-WARFARIN-CYP2C9-IMPM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "warfarin",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C9",
+    "phenotypeIn": ["intermediate", "poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Warfarin dose reduction advised for CYP2C9 intermediate/poor metabolizers",
+   "rationale": "DPWG recommends reducing the warfarin dose in CYP2C9 poor and intermediate metabolizers; CPIC advises using a pharmacogenomics-guided dosing algorithm that incorporates CYP2C9 genotype.",
+   "mechanism": "CYP2C9 metabolises (S)-warfarin; reduced activity raises warfarin exposure, increasing bleeding risk.",
+   "monitoring": ["Frequent INR monitoring especially at initiation. Adjust dose by INR response and per a pharmacogenomics-guided algorithm."],
+   "limitations": [],
+   "evidence": ["E-CPIC-WARFARIN-2017", "G:PA166104949", "G:PA166182842"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative anticoagulant is encoded; see guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-WARFARIN-VKORC1-VARIANT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "warfarin",
+   "condition": {
+    "type": "pgx",
+    "gene": "VKORC1",
+    "phenotypeIn": ["variant_present"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Warfarin dose reduction advised for VKORC1 variant carriers (increased sensitivity)",
+   "rationale": "DPWG recommends 60% of the standard initial warfarin dose for VKORC1 rs9923231 TT genotype carriers (-1639 AA); CPIC includes VKORC1 in its pharmacogenomics dosing algorithm. Variant_present here corresponds to the dose-reducing allele.",
+   "mechanism": "VKORC1 encodes the warfarin target; the -1639A allele reduces VKORC1 expression, making patients more sensitive to warfarin.",
+   "monitoring": ["Frequent INR monitoring. Adjust dose to target INR using a pharmacogenomics-guided algorithm."],
+   "limitations": [],
+   "evidence": ["E-CPIC-WARFARIN-2017", "G:PA166104949", "G:PA166182841"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-WARFARIN-CYP4F2-VARIANT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "warfarin",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP4F2",
+    "phenotypeIn": ["variant_present"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Warfarin dose may need adjustment for CYP4F2 variant carriers",
+   "rationale": "CPIC includes CYP4F2 rs2108622 in its warfarin dosing algorithm; the *3 variant reduces vitamin K recycling, potentially requiring a slightly higher dose. This modifies the direction of expected dose adjustment compared with CYP2C9/VKORC1.",
+   "mechanism": "CYP4F2 metabolises vitamin K1; reduced CYP4F2 activity raises vitamin K availability, blunting warfarin effect slightly.",
+   "monitoring": ["INR monitoring as for all warfarin patients."],
+   "limitations": ["The CYP4F2 variant effect on dose is modest and direction is opposite to CYP2C9/VKORC1 variants (may need higher dose). The full algorithm requires all gene inputs. No dose is calculated here."],
+   "evidence": ["E-CPIC-WARFARIN-2017", "G:PA166104949"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TAMOXIFEN-CYP2D6-PM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "tamoxifen",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative hormonal therapy recommended for CYP2D6 poor metabolizers taking tamoxifen",
+   "rationale": "CPIC recommends alternative hormonal therapy (aromatase inhibitor for postmenopausal women, or ovarian suppression plus aromatase inhibitor for premenopausal women) for CYP2D6 poor metabolizers, as reduced endoxifen formation compromises tamoxifen efficacy; DPWG recommends considering an alternative medication.",
+   "mechanism": "CYP2D6 converts tamoxifen to endoxifen (the active metabolite); poor metabolizers have markedly reduced endoxifen levels and reduced anti-oestrogenic effect.",
+   "monitoring": ["Consider endoxifen plasma level monitoring if tamoxifen is continued despite poor metabolizer status."],
+   "limitations": ["The evidence base is for breast cancer prevention/treatment; applicability to other indications is not established. CPIC recommendation is for postmenopausal vs premenopausal women; sex/menopausal status is not collected."],
+   "evidence": ["E-CPIC-TAMOXIFEN-2018", "G:PA166176068", "G:PA166104966"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Aromatase inhibitor (postmenopausal) or ovarian suppression + aromatase inhibitor (premenopausal) per CPIC.",
+    "evidence": ["G:PA166176068"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TAMOXIFEN-CYP2D6-IM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "tamoxifen",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2D6",
+    "phenotypeIn": ["intermediate"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative or increased dose of tamoxifen advised for CYP2D6 intermediate metabolizers",
+   "rationale": "DPWG recommends considering an alternative medication or a dose increase for CYP2D6 intermediate metabolizers and advises avoiding concomitant strong CYP2D6 inhibitors; CPIC also advises modification.",
+   "mechanism": "Partial CYP2D6 activity reduces endoxifen formation, potentially reducing tamoxifen efficacy.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": ["E-CPIC-TAMOXIFEN-2018", "G:PA166176068", "G:PA166104966"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "Alternative hormonal therapy per CPIC; specific agents not encoded here.",
+    "evidence": ["G:PA166176068"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-OMEPRAZOLE-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "omeprazole",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Increased omeprazole dose recommended for CYP2C19 ultrarapid/rapid metabolizers",
+   "rationale": "CPIC recommends increasing the starting daily dose and monitoring efficacy in CYP2C19 ultrarapid metabolizers; DPWG recommends a 3-fold higher dose for H. pylori eradication therapy in CYP2C19 ultrarapid metabolizers and consideration of an alternative PPI for other indications.",
+   "mechanism": "CYP2C19 is the primary enzyme metabolising omeprazole; ultrarapid/rapid metabolizers have lower drug exposure and reduced acid suppression.",
+   "monitoring": ["Monitor clinical response (H. pylori eradication or symptom relief). TDM not routinely done for PPIs."],
+   "limitations": ["TODO: The DPWG summary for PM/IM of omeprazole is not fully retrievable from the available index; PM/IM rules are not encoded in this version. Re-check G:PA166104957 for complete recommendations."],
+   "evidence": ["E-CPIC-PPI-2021", "G:PA166219103", "G:PA166104957"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-LANSOPRAZOLE-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "lansoprazole",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Increased lansoprazole dose recommended for CYP2C19 ultrarapid/rapid metabolizers",
+   "rationale": "CPIC recommends increasing the starting daily dose for CYP2C19 ultrarapid metabolizers; DPWG recommends a 4-fold higher dose for H. pylori eradication in CYP2C19 ultrarapid metabolizers.",
+   "mechanism": "CYP2C19 is the primary enzyme metabolising lansoprazole; UM/rapid metabolizers have reduced acid suppression at standard doses.",
+   "monitoring": [],
+   "limitations": ["TODO: PM/IM rules for lansoprazole are not encoded in this version. Re-check G:PA166104987 for complete recommendations."],
+   "evidence": ["E-CPIC-PPI-2021", "G:PA166219103", "G:PA166104987"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guidelines."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-VORICONAZOLE-CYP2C19-UM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "voriconazole",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["ultrarapid", "rapid"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative antifungal or increased voriconazole dose recommended for CYP2C19 ultrarapid/rapid metabolizers",
+   "rationale": "CPIC recommends selecting an alternative antifungal agent not dependent on CYP2C19 metabolism for adults who are CYP2C19 ultrarapid metabolizers; DPWG recommends a 1.5-fold higher dose; AusNZ recommends an alternative agent for known CYP2C19 ultrarapid metabolizers.",
+   "mechanism": "CYP2C19 is the primary enzyme metabolising voriconazole; ultrarapid/rapid metabolizers have markedly reduced drug exposure and inadequate antifungal efficacy.",
+   "monitoring": ["Therapeutic drug monitoring (TDM) is strongly recommended. Target voriconazole trough concentration per institutional protocol."],
+   "limitations": [],
+   "evidence": ["E-CPIC-VORI-2017", "G:PA166161537", "G:PA166104990", "G:PA166257241"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "An alternative antifungal not dependent on CYP2C19 (CPIC); specific agents not encoded.",
+    "evidence": ["G:PA166161537"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-VORICONAZOLE-CYP2C19-PM",
+   "version": "2.1.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "voriconazole",
+   "condition": {
+    "type": "pgx",
+    "gene": "CYP2C19",
+    "phenotypeIn": ["poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Alternative antifungal recommended for CYP2C19 poor metabolizers; dose reduction is a secondary option",
+   "rationale": "CPIC recommends selecting an alternative antifungal agent not dependent on CYP2C19 metabolism for adults who are CYP2C19 poor metabolizers (markedly elevated voriconazole exposure raises toxicity risk). DPWG recommends 50% of the standard dose as an alternative path when a substitute agent cannot be used.",
+   "mechanism": "Markedly reduced CYP2C19 activity causes voriconazole accumulation, raising toxicity risk (visual disturbances, hepatotoxicity).",
+   "monitoring": ["TDM is strongly recommended regardless of the approach taken. Target trough concentration per institutional protocol."],
+   "limitations": [],
+   "evidence": ["E-CPIC-VORI-2017", "G:PA166161537", "G:PA166104990"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": true,
+    "text": "An alternative antifungal not dependent on CYP2C19 (CPIC primary recommendation); specific agents not encoded. DPWG recommends 50% of the standard dose if an alternative agent cannot be used.",
+    "evidence": ["G:PA166161537"]
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-DAPSONE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "dapsone",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Dapsone is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends that high-risk drugs — including dapsone — should be avoided in G6PD-deficient patients (with or without chronic non-spherocytic haemolytic anaemia) due to the risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guideline."
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-METHYLENE-BLUE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "methylene-blue",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Methylene blue is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding methylene blue in G6PD-deficient patients due to the risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PEGLOTICASE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "pegloticase",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Pegloticase is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding pegloticase in G6PD-deficient patients due to risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-RASBURICASE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "rasburicase",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Rasburicase is contraindicated in G6PD-deficient patients",
+   "rationale": "CPIC recommends that rasburicase — a high-risk drug — should be avoided in G6PD-deficient patients; the FDA labelling also contraindicate rasburicase in G6PD deficiency due to risk of acute haemolytic anaemia and methemoglobinaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TAFENOQUINE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "tafenoquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Tafenoquine is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding tafenoquine in G6PD-deficient patients due to the risk of acute haemolytic anaemia; tafenoquine is a high-risk 8-aminoquinoline drug in G6PD deficiency.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-TOLUIDINE-BLUE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "toluidine-blue",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Toluidine blue is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends avoiding toluidine blue (tolonium chloride) in G6PD-deficient patients due to risk of acute haemolytic anaemia.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166119846"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PRIMAQUINE-G6PD-DEFICIENT",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "primaquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "deficient"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "avoid",
+   "strength": "strong",
+   "headline": "Primaquine is not recommended in G6PD-deficient patients",
+   "rationale": "CPIC recommends that primaquine should be avoided in G6PD-deficient patients (with or without chronic non-spherocytic haemolytic anaemia). G:PA166279621 is the primaquine-specific CPIC guideline covering G6PD-deficient patients.",
+   "mechanism": "G6PD deficiency impairs the hexose monophosphate shunt in red blood cells, reducing NADPH production and leaving erythrocytes unable to defend against oxidative stress; high-risk drugs generate oxidant stress, causing acute haemolytic anaemia.",
+   "monitoring": [],
+   "limitations": [],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166279621"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-PRIMAQUINE-G6PD-VARIABLE",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "primaquine",
+   "condition": {
+    "type": "pgx",
+    "gene": "G6PD",
+    "phenotypeIn": [
+     "variable"
+    ]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "conditional",
+   "strength": "strong",
+   "headline": "Primaquine use requires specialist review in G6PD-variable patients",
+   "rationale": "CPIC notes that for patients with G6PD variable phenotype (typically heterozygous females with intermediate activity), the recommendation is to consider prescribing primaquine at a reduced dose with enhanced monitoring; the guideline recommends specialist review rather than automatic avoidance.",
+   "mechanism": "G6PD-variable females have intermediate enzyme activity that may not fully protect against oxidant-induced haemolysis; susceptibility depends on the degree of X-chromosome inactivation.",
+   "monitoring": [
+    "Haemoglobin monitoring before and during treatment if primaquine is used."
+   ],
+   "limitations": [
+    "The CPIC guideline provides a nuanced recommendation for variable patients; specific dosing is in the guideline and is not encoded here."
+   ],
+   "evidence": [
+    "E-CPIC-G6PD-2023",
+    "G:PA166279621"
+   ],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false
+   },
+   "blocking": true
+  },
+  {
+   "id": "R-PGX-IRINOTECAN-UGT1A1-PM",
+   "version": "2.0.0",
+   "status": "verified",
+   "module": "pgx",
+   "drug": "irinotecan",
+   "condition": {
+    "type": "pgx",
+    "gene": "UGT1A1",
+    "phenotypeIn": ["poor"]
+   },
+   "requires": {},
+   "onUnmetContext": "conditional",
+   "action": "modify",
+   "headline": "Irinotecan dose reduction recommended for UGT1A1 poor metabolizers (*28/*28)",
+   "rationale": "DPWG recommends dose reductions for irinotecan starting at 70% of the standard starting dose for UGT1A1 *28/*28 homozygotes (poor metabolizers), with increases guided by neutrophil count; RNPGx and AIOM guidelines make similar recommendations.",
+   "mechanism": "UGT1A1 glucuronidates the active irinotecan metabolite SN-38; reduced UGT1A1 activity (*28/*28) elevates SN-38 exposure, increasing the risk of severe diarrhoea and neutropenia.",
+   "monitoring": ["Neutrophil count monitoring after each cycle. Dose escalation only if toxicity is acceptable."],
+   "limitations": ["TODO: For UGT1A1 intermediate metabolizers (*28/*1), dose adjustment recommendations vary across guidelines and are not encoded in this version. Re-check G:PA166104951 and G:PA166127626 for guidance on intermediate phenotype."],
+   "evidence": ["G:PA166104951", "G:PA166127626", "G:PA166312821"],
+   "evidenceLevel": null,
+   "alternatives": {
+    "supported": false,
+    "text": "No specific alternative is encoded; see the cited guidelines."
+   },
+   "blocking": true
   }
  ]
 }

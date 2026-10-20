@@ -1,0 +1,55 @@
+# research/kg/requirements.txt
+# =============================================================================
+# Dependencies for the drug->ADR knowledge-graph research sub-project.
+# Pins match the classical venv this code was developed and verified on
+# (Python 3.13 / 3.12). Install into a fresh venv:
+#
+#     python -m venv research/kg/.venv
+#     research/kg/.venv/Scripts/python.exe -m pip install -U pip
+#     research/kg/.venv/Scripts/python.exe -m pip install -r research/kg/requirements.txt
+#
+# The CLASSICAL pipeline (build_graph, splits, metrics, baselines, ablations,
+# error_analysis, export, run_all) needs ONLY the core block below. torch,
+# torch-geometric, rdkit and matplotlib are OPTIONAL -- the pipeline runs
+# end-to-end without them and prints explicit SKIPPED lines for the GNN,
+# structure, and figure stages.
+# =============================================================================
+
+# ---- Core (required; verified pins) ----------------------------------------
+numpy==2.5.4
+pandas==3.0.6
+pyarrow==26.0.0
+scikit-learn==1.9.1
+scipy==1.18.1
+duckdb==1.5.6
+
+# ---- Optional: figures ------------------------------------------------------
+# Enables PNG figures in run_all.py. Omit it and figures are SKIPPED; all
+# tables are still written. Any recent 3.x works.
+# matplotlib==3.10.8
+
+# ---- Optional: structure fingerprints --------------------------------------
+# RDKit enables Morgan fingerprints in build_graph.py when data_raw/pubchem/
+# SMILES are present. Absent here, so structure features fall back to learned
+# embeddings. Install from PyPI (rdkit-pypi on older setups):
+# rdkit==2025.3.3
+
+# ---- Optional: GNN (PyTorch + PyTorch Geometric) ---------------------------
+# The GNN stage (gnn.py) is the ONLY part that needs torch. It is a TWO-STEP
+# install and is NOT a single `pip install torch-geometric`:
+#
+#   Step 1 -- CPU-only PyTorch from the official CPU index URL:
+#       pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+#     (pick the CUDA build instead only if you have a matching GPU + drivers.)
+#
+#   Step 2 -- PyTorch Geometric and its companion wheels, from the PyG wheel
+#   index that MATCHES your exact torch + platform build:
+#       pip install torch-geometric==2.6.1
+#       pip install pyg_lib torch_scatter torch_sparse torch_cluster \
+#           torch_spline_conv \
+#           -f https://data.pyg.org/whl/torch-2.5.1+cpu.html
+#
+# See research/kg/PROCESS.md for the full walk-through. The classical venv
+# intentionally does NOT ship torch/PyG; keep them out unless you run the GNN.
+# torch==2.5.1
+# torch-geometric==2.6.1

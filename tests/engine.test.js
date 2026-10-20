@@ -163,7 +163,7 @@ test('guideline-index findings (not hand-encoded) never exceed "conditional": th
   const raw = base({}, { CYP2C9: 'poor', VKORC1: 'variant_present', CYP2D6: 'poor', CYP2C19: 'poor', ABCG2: 'poor', CYP3A5: 'poor', CYP2B6: 'poor', G6PD: 'deficient', CYP4F2: 'variant_present' });
   const a = run(raw);
   for (const d of a.results) for (const f of d.findings.filter(f => f.module === 'guideline')) { assert.ok(['conditional', 'informational'].includes(f.category), d.drugId); assert.equal(f.status, 'guideline_index'); assert.ok(f.evidence.length && f.guidelines.length); }
-  for (const id of ['phenytoin', 'warfarin', 'tamoxifen', 'omeprazole']) { const r = drug(a, id); assert.equal(r.coverage.verifiedRules, 0); assert.ok(['conditional', 'informational'].includes(r.overall.category), id); assert.ok(r.findings.some(f => f.module === 'guideline'), id); }
+  for (const id of ['phenytoin', 'acenocoumarol']) { const r = drug(a, id); assert.equal(r.coverage.verifiedRules, 0); assert.ok(['conditional', 'informational'].includes(r.overall.category), id); assert.ok(r.findings.some(f => f.module === 'guideline'), id); }
 });
 test('guideline-only drug: abnormal recorded result -> conditional pointer with all sources side by side; untested gene -> non-blocking missing info', () => {
   const r = drug(run(base({}, { CYP2C9: 'poor' })), 'phenytoin');

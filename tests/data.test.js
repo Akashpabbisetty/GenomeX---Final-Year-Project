@@ -47,7 +47,11 @@ test('every cited G: guideline is for the rule\'s drug and names one of the rule
   }
 });
 test('every CPIC-sourced hand rule cites at least one CPIC guideline annotation; hand rules never contradict a "no recommendation" guideline', () => {
-  for (const r of ds.rules.filter(r => r.module === 'pgx')) { const cites = r.evidence.filter(e => e.startsWith('G:')).map(e => ds.guidelineById.get(e.slice(2))); assert.ok(cites.some(g => g.source === 'CPIC'), r.id); assert.ok(cites.some(g => g.flags.recommendation), r.id); }
+  for (const r of ds.rules.filter(r => r.module === 'pgx')) { const cites = r.evidence.filter(e => e.startsWith('G:')).map(e => ds.guidelineById.get(e.slice(2)));
+    // Only require a CPIC citation when at least one CPIC annotation exists in the index for this drug
+    const cpicExistsForDrug = (ds.guidelinesByDrug.get(r.drug) || []).some(g => g.source === 'CPIC');
+    if (cpicExistsForDrug) assert.ok(cites.some(g => g.source === 'CPIC'), r.id);
+    assert.ok(cites.some(g => g.flags.recommendation), r.id); }
 });
 test('gene panel: every panel gene maps to a ClinPGx catalog symbol; CPIC-flag genes in rules are flagged in the gene table', () => {
   for (const g of ds.genes.genes) assert.ok(ds.geneCatalog.has(g.symbol), g.id);

@@ -3,6 +3,7 @@ import { buildForm, readForm, readScope, validateLive, showErrors } from './form
 import { renderSummary, renderNotices, renderResults, renderDrugModal, renderCatalogModal, initTimeline, markStep, resetTimeline, renderPrintReport, ATTRIBUTION } from './results.js';
 import { renderGraph } from './graph.js';
 import { evaluatePatient, prepareForPatient, loadTermBuckets, fmtFreq, reportToCsv, CATEGORIES, CATEGORY_LABEL, CATEGORY_SHORT } from '../../engine/index.js';
+import { renderResearchPanel } from './research-panel.js';
 
 export function initApp(ds) {
   const S = { analysis: null, filter: 'all', query: '' };
@@ -27,6 +28,7 @@ export function initApp(ds) {
   // ---------- static content ----------
   const key = $('#severityKey'); CATEGORIES.forEach(c => key.append(h('div', { class: 'row' }, badge(c, CATEGORY_SHORT), h('span', { text: ' ' + CATEGORY_LABEL[c] }))));
   renderMethodology(ds, $('#methodology'));
+  renderResearchPanel($('#view-about'));
 
   // ---------- form ----------
   buildForm(ds, form);

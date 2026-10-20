@@ -1,6 +1,7 @@
 import { loadDatasetFromFs, evaluatePatient } from '../engine/index.js';
 import { BASE, NOW } from './fixtures/reference_cases.js';
-export const ROOT = new URL('..', import.meta.url).pathname;
+import { fileURLToPath } from 'node:url';
+export const ROOT = fileURLToPath(new URL('..', import.meta.url));
 export const ds = await loadDatasetFromFs(ROOT);
 export const run = (raw, dataset = ds, opts = {}) => evaluatePatient(raw, dataset, { now: NOW, ...opts });
 export const drug = (a, id) => a.results.find(r => r.drugId === id);
