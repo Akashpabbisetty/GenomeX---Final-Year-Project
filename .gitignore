@@ -34,6 +34,3 @@ data/model/
 logs/
 server_out.txt
 server_err.txt
-
-# --- Workflow internal planning artifacts ---
-.agents/
