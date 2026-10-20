@@ -7,5 +7,6 @@ __pycache__/
 research/kg/.venv/
 research/kg/artifacts/
 research/kg/figures/
+data/model/
 genomex-final/
 logs/

@@ -1,0 +1,26 @@
+{
+  "id": "FEAT-004",
+  "type": "feat",
+  "description": "Export, orchestration, dependencies and documentation: export.py (write research-only scores to data/model/assoc_scores.parquet with model version/hash, and MODEL_CARD.md stating the PU caveat, licences, and research-only/never-overrides-rules intended use); run_all.py (one command running the full pipeline end-to-end on whatever deps are present, writing tables + figures to research/kg/figures/, printing a capability banner and explicit SKIPPED lines for GNN/structure/figures when deps are absent); requirements.txt (pinned); and METHODS.md, PROCESS.md, README.md. Depends on FEAT-001..003.",
+  "status": "pending",
+  "steps": [
+    "Read research/kg/.agents/plan.md and context.json FIRST, plus prior FEAT findings.",
+    "Create research/kg/export.py (`[kg.export]` style): export_scores(scores, model_version, graph_hash, out='data/model/assoc_scores.parquet') with columns drug_id,cui,score,model_version,model_hash; and write_model_card(path='research/kg/MODEL_CARD.md', metrics, licences) stating: absent label entries are UNLABELED not negative (PU-learning); licences ClinPGx CC BY-SA 4.0 (attribute/share-alike/non-commercial), SIDER and TG-GATEs licences to be verified; intended use research only, never clinical, never overrides or sets a rule category; rat-data limitation for TG-GATEs. The engine must never read this file — only export writes it.",
+    "Create research/kg/run_all.py (`[kg.run]` style): main() runs build_graph -> splits -> metrics -> baselines -> (gnn only if torch importable) -> ablations -> error_analysis -> export, writing tables (CSV/Parquet/Markdown) always and PNG figures to research/kg/figures/ only when matplotlib is importable. Print a capability banner at start (which optional deps present/absent) and explicit lines like 'SKIPPED: GNN (torch not installed)', 'SKIPPED: structure (RDKit not installed)', 'SKIPPED: figures (matplotlib not installed)'.",
+    "Create research/kg/requirements.txt pinning torch, torch-geometric, scikit-learn, pandas, pyarrow, numpy, scipy, duckdb, optional rdkit, optional matplotlib with versions, plus comments on the separate PyG wheel install step and the CPU-only torch index URL.",
+    "Write research/kg/METHODS.md (task definition, graph schema, why cold-start splits, baselines + GNN described precisely, PU-learning caveat, metrics + CIs, ablation design, honest limitations: SIDER 4.1 snapshot, labels from drug labels not patient outcomes, no patient cohort, rat TG-GATEs data; use [cite: verify] placeholders, invent NO citations); research/kg/PROCESS.md (PowerShell run guide: venv create, pip install -r requirements.txt, separate PyG wheel step, CPU-only torch path, where PubChem data goes (data_raw/pubchem/), what each command does, expected outputs, what to do when torch/RDKit absent); research/kg/README.md (short orientation, the one command `python run_all.py`, pointers to METHODS.md and PROCESS.md and MODEL_CARD.md)."
+  ],
+  "acceptance_criteria": [
+    "research/kg/.venv/Scripts/python.exe research/kg/run_all.py completes end-to-end on the classical venv, prints the capability banner and explicit SKIPPED lines for GNN and structure (and figures if matplotlib absent), and still produces baseline tables + data/model/assoc_scores.parquet.",
+    "data/model/assoc_scores.parquet has columns drug_id,cui,score,model_version,model_hash.",
+    "research/kg/MODEL_CARD.md contains the PU caveat, the three licences, and an explicit 'research only / never overrides rules' statement.",
+    "METHODS.md uses [cite: verify] placeholders and invents no citations; PROCESS.md documents the venv + PyG wheel + torch CPU-only steps and the torch/RDKit-absent fallback; README.md names the single run command.",
+    "requirements.txt pins all core deps with versions and notes the separate PyG install step."
+  ],
+  "verification": [
+    "research/kg/.venv/Scripts/python.exe research/kg/run_all.py  (expect end-to-end completion with SKIPPED banner lines and assoc_scores.parquet written)",
+    "research/kg/.venv/Scripts/python.exe -m pytest research/kg/tests/test_export.py  (fallback: run directly) — asserts the Parquet schema and the model-card required statements"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

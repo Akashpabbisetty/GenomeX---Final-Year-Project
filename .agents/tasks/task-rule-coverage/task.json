@@ -1,0 +1,7 @@
+{
+  "task_id": "task-rule-coverage",
+  "task_description": "Expand GenomX Advisor rule coverage: encode high-priority pharmacogenomic guidelines as cited, hand-verified rules for 9 drug groups (CYP2D6 TCAs, CYP2C19 SSRIs, tacrolimus, warfarin, tamoxifen, PPIs, voriconazole, irinotecan, G6PD drugs). Fix pre-existing Windows path bug in tests/helpers.js. Every rule must cite a real G:PA annotation ID from data/guidelines/index.json and have a reference test case.",
+  "status": "pending",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "task-kg-adr",
+  "task_description": "Build the primary KG drug->ADR association-prediction research experiment under research/kg/: reproducible knowledge-graph build to Parquet with SHA-256 provenance; leakage-controlled drug-wise/term-wise/random splits with a zero-overlap unit test; classical baselines (popularity, similarity-kNN, logistic regression, matrix factorisation); a lazy-imported heterogeneous GNN; metrics (AUROC/AUPRC/P@k/ECE) with bootstrap CIs over held-out drugs; ablation matrix and error analysis; score export to data/model/assoc_scores.parquet plus MODEL_CARD.md; a single run_all.py that degrades gracefully when torch/RDKit/matplotlib are absent; requirements.txt and METHODS/PROCESS/README docs. Model output is research-only and must never feed the deterministic engine or set a rule category. Do not modify engine/, frontend/, or research/models/.",
+  "status": "pending",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003", "FEAT-004", "FEAT-005"],
+  "blocked_reason": null
+}

@@ -1,0 +1,33 @@
+{
+  "project_type": "Node.js 22 ESM (\"type\":\"module\") — plain ES modules, no framework. Browser frontend + Node engine + Node server. Windows local dev machine.",
+  "language": "JavaScript (ES modules), Node 22",
+  "build_system": "No build step. Scripts run directly with node. IMPORTANT: project uses \"type\":\"module\" so all files must be .js ESM with import/export. No CommonJS require().",
+  "test_framework": "Node.js built-in test runner (node:test + node:assert/strict). Tests: tests/data.test.js, tests/engine.test.js, tests/ui.test.js. New tests go in tests/.",
+  "build_command": "No compile step.",
+  "test_command": "node --test \"tests/*.test.js\"   (run from project root)",
+  "verification_instructions": "1. Run node --test \"tests/*.test.js\" from project root — all tests must pass. 2. Start server: node server/index.js (defaults port 3001). 3. POST synthetic patient to http://localhost:3001/api/evaluate and confirm response has {findings, missingInformation, evidence, ruleSetVersion, disclaimer, dataAttributions} and NO numeric score field. 4. node scripts/synthetic_demo.js — confirm 'SYNTHETIC DATA' banner and category distribution. 5. Kill server.",
+  "snapshot_or_generated_files": "None that are checked in.",
+  "environment_constraints": "Windows/PowerShell. NO npm install — only node built-ins (node:http, node:fs, node:path, node:url, node:readline, node:net, node:test, node:assert) and jsdom (already in devDependencies). No new npm dependencies. Engine internals under engine/ are read-only (only add new files elsewhere).",
+  "contribution_requirements": "No numeric safety score anywhere. Seven categories only: avoid > modify > conditional > monitor > needs_info > informational > no_flag. Missing data is never normal. Model output never overrides rules. ClinPGx CC BY-SA 4.0 attribution required. Disclaimer on every output. Auth stub + audit log + 'real patient data MUST NOT be used until security/ethics review' warning required in server code.",
+  "key_patterns": "Engine: loadDatasetFromFs(root) loads dataset from filesystem; evaluatePatientAsync(rawPatient, ds) runs full evaluation; normalizePatient(raw, ds) validates input and returns {errors,warnings}. Test helpers: helpers.js exports ds, run, drug, base, cat, ROOT. Reference cases: tests/fixtures/reference_cases.js exports CASES, NOW, BASE. Scripts: use fileURLToPath(new URL('..', import.meta.url)) NOT .pathname (Windows path bug). Report: DISCLAIMER and ATTRIBUTION constants live in engine/report.js.",
+  "relevant_files": [
+    "engine/index.js — exports evaluatePatientAsync, evaluatePatient, normalizePatient, loadDatasetFromFs, CATEGORIES, PRECEDENCE, ENGINE_VERSION",
+    "engine/patient.js — normalizePatient implementation (the validation the server must reuse)",
+    "engine/report.js — DISCLAIMER and ATTRIBUTION constants",
+    "engine/dataset.js — loadDatasetFromFs pattern (uses fileURLToPath for paths)",
+    "engine/constants.js — CATEGORIES, PRECEDENCE, CATEGORY_LABEL, ENGINE_VERSION",
+    "tests/helpers.js — ROOT export BUG: uses .pathname instead of fileURLToPath; this must be fixed",
+    "tests/engine.test.js — test style to follow (node:test, node:assert/strict)",
+    "tests/fixtures/reference_cases.js — BASE patient template and geno() helper for synthetic data",
+    "scripts/bench.mjs — existing script pattern (same path bug present; fix in new scripts)",
+    "frontend/ui/dom.js — h() function for safe DOM construction (no innerHTML)",
+    "frontend/ui/app.js — initApp(ds) pattern; where to call renderResearchPanel",
+    "frontend/ui/results.js — ATTRIBUTION constant export used by UI",
+    "frontend/genomx-advisor.html — CSP: connect-src 'self' allows same-origin fetch",
+    "data/meta.json — ruleSetVersion: 2026.10.0-prototype",
+    "data/genes.json — gene list with phenotypes (used for synthetic demo)",
+    "data/model/ — empty directory; assoc_scores.parquet does not exist yet"
+  ],
+  "directory_structure": "engine/ — rule engine (read-only: add no files here) | data/ — JSON knowledge base (rules/, adverse/, guidelines/, tggates/, model/) | frontend/ — browser UI (ui/main.js entry, ui/app.js, ui/dom.js, ui/form.js, ui/results.js, ui/graph.js) | tests/ — test files + fixtures/ | scripts/ — ingest/bench/validate scripts (existing) | genomex-final/api/ — NEW: Node.js HTTP API server, batch CLI, synthetic demo, documentation, and copy of research panel | .agents/tasks/ — planning artifacts. NOTE: New server/scripts/docs go in genomex-final/api/; frontend panel primary is frontend/ui/ with a copy in genomex-final/api/; tests stay in tests/.",
+  "output_location_override": "All new server and script files go in genomex-final/api/ (not in server/ or scripts/). Import paths from genomex-final/api/ must use '../../engine/...' (two levels up). Dataset root = fileURLToPath(new URL('../..', import.meta.url)). Tests stay in tests/ and import from '../genomex-final/api/index.js'."
+}
