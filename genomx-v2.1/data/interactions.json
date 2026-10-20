@@ -1,8 +1,0 @@
-{
- "schema": "interactions/1",
- "status": "not_configured",
- "message": "No verified drug–drug interaction dataset is configured. Interaction screening is NOT performed, and absence of a result must not be read as absence of interaction.",
- "provider": null,
- "pairs": [],
- "howToConfigure": "Populate pairs[] from a licensed/verified source (each with severity, mechanism, effect, management, evidence id) or implement engine/evaluators/interactions.js provider.check()."
-}
